@@ -14,7 +14,7 @@
 <meta name="description" content="{{ themeConfig.description }}">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://ohosanna.github.io/favicon.ico?v=1583250719344">
+<link rel="shortcut icon" href="https://ohosanna.github.io/favicon.ico?v=1583253071076">
 <link rel="stylesheet" href="https://ohosanna.github.io/styles/main.css">
 
 
@@ -90,6 +90,60 @@
       <div id="content">
         <div class="center">
           <div class="main-col">
+            
+              <article class="">
+	<div class="post-content">
+		<header>
+			
+				<div class="meta">
+					<div class="icon">
+						<i class="fa fa-file"></i>
+					</div>
+					<time datetime="2011-11-03 22:18:48">2011-11-03 22:18:48</time>
+				</div>
+			
+
+			
+				<h1 class="title" data-role="articleTitle"><a href="https://ohosanna.github.io/post/2011-11-04-linuxmp3/">Linux下Mp3乱码问题的处理</a></h1>
+			
+		</header>
+		
+		<div class="entry">
+			
+				<p>在Linux下播放mp3的时候，经常碰到mp3的信息显示为乱码的问题。这是因为我们能找到的mp3文件标签大部分都是以GBK/GB18030编码的，而绝大多数的Linux(包括Linux系的手机系统)默认的编码是utf8，两者编码不同就会导致乱码问题的出现。</p>
+<p>一个很好的解决方法就是安装Mutagen这个软件，用它来把mp3标签的编码统一转换为utf8。在Gentoo下可以通过以下命令安装：</p>
+<pre><code>emerge -av mutagen
+</code></pre>
+<p>装完后就可以通过以下命令来把目录下的所有mp3文件批量转换了：</p>
+<pre><code class="language-bash">cd /mnt/sda5/music   #转到音乐文件目录
+find . -iname &quot;*.mp3&quot; -execdir mid3iconv -e gbk --remove-v1 {} \;
+</code></pre>
+<ul>
+<li>-e gbk 参数是代表把 GBK 编码的标签转换为 Unicode 编码，本身是 Unicode 编码的就不转换。如果需要转换其他编码的文件可以自行修改，如改为 Big5。</li>
+<li>不过它会同时用 Unicode 编码填满 D3v1, ID3v2, APEv2 标签，但是 ID3v1 又不支持中文的 Unicode 编码，所以转换后的 ID3v1 标签全是问号。所以最好加上 –remove-v1 参数，转换后删除 ID3v1 标签。</li>
+</ul>
+
+			
+		</div>
+		<footer class="clearfix">
+			
+
+			
+				<div class="tags">
+					<i class="fa fa-tags"></i>
+					
+						<a href="https://ohosanna.github.io/tag/OMv3BBGIqa/">#tools</a>
+					
+						<a href="https://ohosanna.github.io/tag/AiI8RqKUuf/">#linux</a>
+					
+				</div>
+			
+
+			
+
+		</footer>
+	</div>
+</article>
             
               <article class="">
 	<div class="post-content">
@@ -690,57 +744,6 @@ from /usr/bin/rails:8
 					<i class="fa fa-tags"></i>
 					
 						<a href="https://ohosanna.github.io/tag/D0_xq6Ok1/">#other</a>
-					
-				</div>
-			
-
-			
-
-		</footer>
-	</div>
-</article>
-            
-              <article class="">
-	<div class="post-content">
-		<header>
-			
-				<div class="meta">
-					<div class="icon">
-						<i class="fa fa-file"></i>
-					</div>
-					<time datetime="2011-02-18 14:03:53">2011-02-18 14:03:53</time>
-				</div>
-			
-
-			
-				<h1 class="title" data-role="articleTitle"><a href="https://ohosanna.github.io/post/2011-02-18-urxvt256/">让urxvt支持256色</a></h1>
-			
-		</header>
-		
-		<div class="entry">
-			
-				<p>urxvt默认是不支持256色的，所以在urxvt里使作vim的时候，那些漂亮的配色方案就没有效果了。幸好，urxvt要加入256色的支持很简单，执行：</p>
-<pre><code class="language-bash">echo &quot;x11-terms/rxvt-unicode 256-color&quot; &gt;&gt; /etc/portage/package.use
-emerge -av rxvt-unicode
-</code></pre>
-<p>要vim也支持256色，需要在~/.vimrc里加入：</p>
-<pre><code>set t_Co=256
-</code></pre>
-<p>最终效果：<br>
-<img src="http://farm6.static.flickr.com/5097/5470168820_3afe3b07e2.jpg" alt="urxvt with 256 color by hosanna_cn, on Flickr" loading="lazy"></p>
-
-			
-		</div>
-		<footer class="clearfix">
-			
-
-			
-				<div class="tags">
-					<i class="fa fa-tags"></i>
-					
-						<a href="https://ohosanna.github.io/tag/OMv3BBGIqa/">#tools</a>
-					
-						<a href="https://ohosanna.github.io/tag/AiI8RqKUuf/">#linux</a>
 					
 				</div>
 			

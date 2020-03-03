@@ -14,7 +14,7 @@
 <meta name="description" content="{{ themeConfig.description }}">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://ohosanna.github.io/favicon.ico?v=1583250719344">
+<link rel="shortcut icon" href="https://ohosanna.github.io/favicon.ico?v=1583253071076">
 <link rel="stylesheet" href="https://ohosanna.github.io/styles/main.css">
 
 
@@ -90,6 +90,70 @@
       <div id="content">
         <div class="center">
           <div class="main-col">
+            
+              <article class="">
+	<div class="post-content">
+		<header>
+			
+				<div class="meta">
+					<div class="icon">
+						<i class="fa fa-file"></i>
+					</div>
+					<time datetime="2010-07-15 09:01:35">2010-07-15 09:01:35</time>
+				</div>
+			
+
+			
+				<h1 class="title" data-role="articleTitle"><a href="https://ohosanna.github.io/post/2010-07-15-iframe-auto-height/">iframe 自适应高度</a></h1>
+			
+		</header>
+		
+		<div class="entry">
+			
+				<p>今天碰到一个客户要求在他网站上添加背景音乐，还是要求切换栏目的时候不间断那种。囧……我最讨厌就是浏览有背景音乐的网站了，但好像国内的小企业客户就喜欢这样来。没办法，要不间断播放我只能想到用框架大法了。</p>
+<p>但是，用iframe的时候却碰到了个问题：</p>
+<pre><code class="language-html">&lt;iframe src=&quot;source.html&quot; width=&quot;100%&quot; scrolling=&quot;auto&quot; frameborder=&quot;0&quot; height=&quot;100%&quot;&gt;
+&lt;/iframe&gt;
+</code></pre>
+<p>这样设置的时候，在FF下是OK的，但是在IE下，却是有两个滚动条，这并不是我想要的效果。</p>
+<p>最后，在网上找了一段JS代码，将iframe的高度自动设置，问题得到解决。</p>
+<pre><code class="language-javascript">&lt;script type=&quot;text/javascript&quot;&gt;
+ function SetCwinHeight(){
+  var iframeid=document.getElementById(&quot;web&quot;); //iframe id
+  if (document.getElementById){
+   if (iframeid &amp;&amp; !window.opera){
+    if (iframeid.contentDocument &amp;&amp; iframeid.contentDocument.body.offsetHeight){
+     iframeid.height = iframeid.contentDocument.body.offsetHeight;
+    }else if(iframeid.Document &amp;&amp; iframeid.Document.body.scrollHeight){
+     iframeid.height = iframeid.Document.body.scrollHeight;
+    }
+   }
+  }
+ }
+&lt;/script&gt;
+&lt;iframe id=&quot;web&quot; onload=&quot;Javascript:SetCwinHeight()&quot; src=&quot;source.html&quot; width=&quot;100%&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; height=&quot;87&quot;&gt;
+&lt;/iframe&gt;
+</code></pre>
+
+			
+		</div>
+		<footer class="clearfix">
+			
+
+			
+				<div class="tags">
+					<i class="fa fa-tags"></i>
+					
+						<a href="https://ohosanna.github.io/tag/5WODUjd50/">#web</a>
+					
+				</div>
+			
+
+			
+
+		</footer>
+	</div>
+</article>
             
               <article class="">
 	<div class="post-content">
