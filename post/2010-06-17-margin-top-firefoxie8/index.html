@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>margin-top 在Firefox和IE8下的问题 | Ohosanna&#39;s Blog</title>
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="description" content="{{ themeConfig.description }}">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://ohosanna.github.io/favicon.ico?v=1583250719344">
+<link rel="stylesheet" href="https://ohosanna.github.io/styles/main.css">
+
+
+
+
+
+    <meta name="description" content="最近，在写CSS样式的时候总碰到一个问题（其实也不是最近才碰到，只不过是最近才比较在意而已），那就是当我对一个层用了margin-top这个属性的时候，这个层本身并没有如预期一样起作用，反而是它的父级应用了这个属性！如下图：
+
+
+
+HTML..." />
+    <meta name="keywords" content="web" />
+  </head>
+  <body>
+
+      
+<header id="header">
+  <div id="fixTitle"><div class="center"><h1 class="title"></h1></div></div>
+	<div class="center">
+		<div class="wrap">
+			<div id="site">
+				<h1>
+          <a href="https://ohosanna.github.io">Ohosanna&#39;s Blog</a>
+          
+            <a class="github social-icon" href="https://github.com/">
+              <svg aria-hidden="true" class="octicon octicon-mark-github" height="28" role="img" version="1.1" viewBox="0 0 16 16" width="28"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59 0.4 0.07 0.55-0.17 0.55-0.38 0-0.19-0.01-0.82-0.01-1.49-2.01 0.37-2.53-0.49-2.69-0.94-0.09-0.23-0.48-0.94-0.82-1.13-0.28-0.15-0.68-0.52-0.01-0.53 0.63-0.01 1.08 0.58 1.23 0.82 0.72 1.21 1.87 0.87 2.33 0.66 0.07-0.52 0.28-0.87 0.51-1.07-1.78-0.2-3.64-0.89-3.64-3.95 0-0.87 0.31-1.59 0.82-2.15-0.08-0.2-0.36-1.02 0.08-2.12 0 0 0.67-0.21 2.2 0.82 0.64-0.18 1.32-0.27 2-0.27 0.68 0 1.36 0.09 2 0.27 1.53-1.04 2.2-0.82 2.2-0.82 0.44 1.1 0.16 1.92 0.08 2.12 0.51 0.56 0.82 1.27 0.82 2.15 0 3.07-1.87 3.75-3.65 3.95 0.29 0.25 0.54 0.73 0.54 1.48 0 1.07-0.01 1.93-0.01 2.2 0 0.21 0.15 0.46 0.55 0.38C13.71 14.53 16 11.53 16 8 16 3.58 12.42 0 8 0z"></path></svg>
+            </a>
+          
+				</h1>
+				
+					<h2>
+					  <a href="https://ohosanna.github.io">老农家的一亩三分地</a>
+          </h2>
+        
+			</div>
+			<nav id="menu">
+				<ul>
+          
+            
+              <li>
+                <a href="/" class="site-nav">
+                  首页
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/archives" class="site-nav">
+                  归档
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/tags" class="site-nav">
+                  标签
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/post/about" class="site-nav">
+                  关于
+                </a>
+              </li>
+            
+          
+				</ul>
+			</nav>
+		</div>
+	</div>
+</header>
+
+      <div id="content">
+        <div class="center">
+          <div class="main-col">
+            <article class="">
+	<div class="post-content">
+		<header>
+			
+				<div class="meta">
+					<div class="icon">
+						<i class="fa fa-file"></i>
+					</div>
+					<time datetime="2010-06-16 16:48:16">2010-06-16 16:48:16</time>
+				</div>
+			
+
+			
+				<h1 class="title">margin-top 在Firefox和IE8下的问题</h1>
+			
+		</header>
+		
+		<div class="entry">
+			
+				<p>最近，在写CSS样式的时候总碰到一个问题（其实也不是最近才碰到，只不过是最近才比较在意而已），那就是当我对一个层用了margin-top这个属性的时候，这个层本身并没有如预期一样起作用，反而是它的父级应用了这个属性！如下图：</p>
+<a href="/sites/default/files/u1/firefox-margin-top-bug.jpg">
+<img alt="firefox-margin-top-bug" src="/sites/default/files/u1/firefox-margin-top-bug.jpg" style="border: 0px solid; margin: 0px; width: 600px;" /></a>
+<!-- more -->
+<p>HTML代码：</p>
+<pre><code class="language-html">&lt;div id=&quot;header&quot;&gt;
+  &lt;div id=&quot;header-inner&quot; class=&quot;clear-block&quot;&gt; 
+    &lt;div id=&quot;site-title&quot;&gt;
+      &lt;div id=&quot;logo-title&quot;&gt;
+		    &lt;h1 id=&quot;site-name&quot;&gt;&lt;a href=&quot;/&quot; title=&quot;首页&quot; rel=&quot;home&quot;&gt;老农家的一亩三分地&lt;/a&gt;
+       &lt;/h1&gt;
+	    &lt;/div&gt; &lt;!-- /#logo-title --&gt;
+	 &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>CSS代码：</p>
+<pre><code class="language-css">#header-inner {
+    width: 970px;
+    height: 270px;
+    clear: both;
+    margin: 0 auto;
+    background: url(images/head.jpg) no-repeat center top;
+}
+
+#site-title {
+    width: 870px;
+    height: 30px;
+    margin: 0 auto;
+    margin-top: 160px;
+}
+</code></pre>
+<p>其实，我的本意是让网站的标题跟顶部有一定的距离，好让标题(#site-title)可以显示在正确的位置，但现在的结果是标题的margin-top不起作用，反而是他的父级(#header)应用了这个属性。这个问题在IE6下不会出现，但在IE8和Firefox等一些“现代”的浏览器下会出现，这就奇怪了，一般来说平时碰到的问题都是因为IE6的问题，现在反而倒回来了，难道是CSS的一个Bug?</p>
+<p>最后，还是在网上找到了一个临时的解决方案，那就是在这个层（#site-title）的父级（#header-inner）添加一个padding-top的值就可以了，哪怕是1个像素！到底是不是CSS的一个Bug就不清楚了，不过这确实解决了我的问题。</p>
+<p>CSS代码</p>
+<pre><code class="language-css">#header-inner {
+    width: 970px;
+    height: 269px;
+    clear: both;
+    margin: 0 auto;
+   padding-top: 1px;
+    background: url(images/head.jpg) no-repeat center top;
+}
+
+#site-title {
+    width: 870px;
+    height: 30px;
+    margin: 0 auto;
+    margin-top: 160px;
+}
+</code></pre>
+<p>最终的结果如下：<br>
+<a href="/sites/default/files/u1/firefox-margin-top-fix.jpg"><br>
+<img alt="firefox-margin-top-fix" src="/sites/default/files/u1/firefox-margin-top-fix.jpg" style="border: 0px solid; margin: 0px; width: 600px;" /></a></p>
+
+			
+		</div>
+		<footer class="clearfix">
+			
+
+			
+				<div class="tags">
+					<i class="fa fa-tags"></i>
+					
+						<a href="https://ohosanna.github.io/tag/5WODUjd50/">#web</a>
+					
+				</div>
+			
+
+			
+				
+					<div class="next-post">
+					<div class="next">下一篇</div>
+					<a href="https://ohosanna.github.io/post/2010-05-28-gentoo-nginx-install/">
+						<h3 class="post-title">
+						Gentoo下安装与配置Nginx
+						</h3>
+					</a>
+					</div>
+				
+				
+			
+
+		</footer>
+	</div>
+</article>
+          </div>
+        </div>
+      </div>
+      <footer id="footer">
+	<div class="center">
+		&copy; 2020
+		
+			Ohosanna&#39;s Blog
+		.
+		&nbsp;&nbsp;
+		  
+		<a class="rss" href="https://ohosanna.github.io/atom.xml" target="_blank">
+		&nbsp;&nbsp;
+			<i class="fa fa-rss"></i> RSS
+		</a>
+		&nbsp;&nbsp;
+		Blog generated by <a href="https://gridea.dev" target="_blank">Gridea</a>
+	</div>
+</footer>
+    </div>
+
+    <script>
+  (function() {
+    var $app = document.getElementById('app');
+    var $titles = document.querySelectorAll('.post-content .title[data-role=articleTitle]');
+    var $fixTitle = document.getElementById('fixTitle');
+    window.onscroll = function() {
+      if (document.documentElement.clientWidth > 500) {
+        var $header = document.getElementById('header');
+        var y = window.scrollY || window.pageYOffset;
+        if (y > 40) {
+          $header.classList.add('small');
+        } else {
+          $header.classList.remove('small');
+        }
+      }
+
+      for (var i = $titles.length - 1; i >= 0; i--) {
+        var titleEl = $titles[i];
+        var rect = titleEl.getBoundingClientRect();
+        if (rect.top < 100) {
+          var text = titleEl.textContent;
+          $app.classList.add('show-fixtitle');
+          $fixTitle.querySelector('.title').textContent = text;
+          break;
+        } else if (i === 0) {
+          $app.classList.remove('show-fixtitle');
+        }
+      }
+
+    }
+  }());
+</script>
+
+  <link rel="stylesheet" href="http://cdn.bootcss.com/highlight.js/8.0/styles/tomorrow.min.css" />
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>

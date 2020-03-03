@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>Ohosanna&#39;s Blog</title>
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="description" content="{{ themeConfig.description }}">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://ohosanna.github.io/favicon.ico?v=1583250719344">
+<link rel="stylesheet" href="https://ohosanna.github.io/styles/main.css">
+
+
+
+
+
+    <meta name="description" content="老农家的一亩三分地">
+    
+  </head>
+  <body>
+    <div id="app" class="main">
+      
+<header id="header">
+  <div id="fixTitle"><div class="center"><h1 class="title"></h1></div></div>
+	<div class="center">
+		<div class="wrap">
+			<div id="site">
+				<h1>
+          <a href="https://ohosanna.github.io">Ohosanna&#39;s Blog</a>
+          
+            <a class="github social-icon" href="https://github.com/">
+              <svg aria-hidden="true" class="octicon octicon-mark-github" height="28" role="img" version="1.1" viewBox="0 0 16 16" width="28"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59 0.4 0.07 0.55-0.17 0.55-0.38 0-0.19-0.01-0.82-0.01-1.49-2.01 0.37-2.53-0.49-2.69-0.94-0.09-0.23-0.48-0.94-0.82-1.13-0.28-0.15-0.68-0.52-0.01-0.53 0.63-0.01 1.08 0.58 1.23 0.82 0.72 1.21 1.87 0.87 2.33 0.66 0.07-0.52 0.28-0.87 0.51-1.07-1.78-0.2-3.64-0.89-3.64-3.95 0-0.87 0.31-1.59 0.82-2.15-0.08-0.2-0.36-1.02 0.08-2.12 0 0 0.67-0.21 2.2 0.82 0.64-0.18 1.32-0.27 2-0.27 0.68 0 1.36 0.09 2 0.27 1.53-1.04 2.2-0.82 2.2-0.82 0.44 1.1 0.16 1.92 0.08 2.12 0.51 0.56 0.82 1.27 0.82 2.15 0 3.07-1.87 3.75-3.65 3.95 0.29 0.25 0.54 0.73 0.54 1.48 0 1.07-0.01 1.93-0.01 2.2 0 0.21 0.15 0.46 0.55 0.38C13.71 14.53 16 11.53 16 8 16 3.58 12.42 0 8 0z"></path></svg>
+            </a>
+          
+				</h1>
+				
+					<h2>
+					  <a href="https://ohosanna.github.io">老农家的一亩三分地</a>
+          </h2>
+        
+			</div>
+			<nav id="menu">
+				<ul>
+          
+            
+              <li>
+                <a href="/" class="site-nav">
+                  首页
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/archives" class="site-nav">
+                  归档
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/tags" class="site-nav">
+                  标签
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/post/about" class="site-nav">
+                  关于
+                </a>
+              </li>
+            
+          
+				</ul>
+			</nav>
+		</div>
+	</div>
+</header>
+
+      <div id="content">
+        <div class="center">
+          <div class="main-col">
+            
+              <article class="">
+	<div class="post-content">
+		<header>
+			
+				<div class="meta">
+					<div class="icon">
+						<i class="fa fa-file"></i>
+					</div>
+					<time datetime="2011-01-11 00:35:43">2011-01-11 00:35:43</time>
+				</div>
+			
+
+			
+				<h1 class="title" data-role="articleTitle"><a href="https://ohosanna.github.io/post/2011-01-11-palm-pre/">Palm Pre 通信录拼音排序补丁</a></h1>
+			
+		</header>
+		
+		<div class="entry">
+			
+				<p>自Palm pre入手到现在已经一个多月了，这一个多月里对WebOS这个手机操作系统从不了解到慢慢熟悉，再到学习开发，大部分的业余时间都花在了这里。暂且不说Palm pre这款手机如何，单WebOS这个系统就给了我不少的惊喜，卡片式的操作方式真的很赞。但因为Palm pre未在中国大陆地区上市，所以中文支持不咋的，这方面完全依靠民间的开发者在支撑着。但我碰到的一个最大的问题是：通信录里的联系人不可以按拼音排序！据说当初iOS和Android系统也有这样的问题，不过现在已经有了相应的补丁来解决这个问题，而Palm pre 在这方面，虽然有人用JAVA重写了一个通信录（服务端）软件，但我一直都安装不成功，就只能自己想办法了。</p>
+<p>一开始我想到的是给sqlite这个软件打补丁，让它直接支持拼音排序，好不容易搭好的编译环境，并为sqlite加入了拼音排序函数，却发现Webos使用的是它自己写的一个sqlite-server来读取数据的，而这个软件的源代码又不是开源了，无法为它添加补丁，只好作罢。一个偶然的机会，看到了iPhone的拼音排序补丁，发现它是直接在数据库文件里做了处理，这给了我一个思路，又恶补了几天SQL的语法，终于可以让Palm pre 的通信录可以按拼音来排序了，看图：<br>
+<img src="http://farm6.static.flickr.com/5203/5357150220_3d6d55af72.jpg" alt="Palm pre 通信录拼音排序" loading="lazy"></p>
+<p>这是虚拟机里面的截图，Palm Pre的SDK还是比较给力的，用起来很方便。虚拟机软件用的是VirtualBox，赞一个！</p>
+<p>在截图中露脸的那几个朋友，记得给我寄广告费！嗯……这一次，先免费看效果，下一次就得收钱了！</p>
+<p>补丁文件迟点再放出，先让我的Palm Pre做一下小白鼠，确认没什么不良反应再放出，佛曰：我不入地狱，谁入地狱！</p>
+
+			
+		</div>
+		<footer class="clearfix">
+			
+
+			
+				<div class="tags">
+					<i class="fa fa-tags"></i>
+					
+						<a href="https://ohosanna.github.io/tag/D0_xq6Ok1/">#other</a>
+					
+				</div>
+			
+
+			
+
+		</footer>
+	</div>
+</article>
+            
+              <article class="">
+	<div class="post-content">
+		<header>
+			
+				<div class="meta">
+					<div class="icon">
+						<i class="fa fa-file"></i>
+					</div>
+					<time datetime="2010-10-27 13:03:00">2010-10-27 13:03:00</time>
+				</div>
+			
+
+			
+				<h1 class="title" data-role="articleTitle"><a href="https://ohosanna.github.io/post/2010-10-27-vim/">VIM中为一个文件设置多种文件类型</a></h1>
+			
+		</header>
+		
+		<div class="entry">
+			
+				<p>VIM的很多插件功能都是根据文件类型来开启的，比如说代码高亮和自动补全等功能。而VIM又是根据文件扩展名来确定文件类型，有很多时候，在一个文件里可能要用到针对多种文件类型的功能，比如说在编辑php文件的时候，因为经常是要同时包含php和html代码，所以想同时打开snipMate针对php和html的自动补全功能。这个时候，单单是针对文件扩展名来确定文件类型是不够的，这样只能使用一种文件类型的特性。幸好，VIM是可以为一种文件扩展名定义多种文件类型的，只需要VIM的配置文件里加入如下配置：</p>
+<pre><code class="language-bash">if has(&quot;autocmd&quot;)
+    autocmd BufRead,BufNewFile *.php set filetype=html.php
+endif
+</code></pre>
+<p>这样在用VIM打开php文件时，就会同时应用html和php两种文件类型的特性，多个文件类型之间用“.”号连接。</p>
+
+			
+		</div>
+		<footer class="clearfix">
+			
+
+			
+				<div class="tags">
+					<i class="fa fa-tags"></i>
+					
+						<a href="https://ohosanna.github.io/tag/AiI8RqKUuf/">#linux</a>
+					
+				</div>
+			
+
+			
+
+		</footer>
+	</div>
+</article>
+            
+              <article class="">
+	<div class="post-content">
+		<header>
+			
+				<div class="meta">
+					<div class="icon">
+						<i class="fa fa-file"></i>
+					</div>
+					<time datetime="2010-10-18 02:27:49">2010-10-18 02:27:49</time>
+				</div>
+			
+
+			
+				<h1 class="title" data-role="articleTitle"><a href="https://ohosanna.github.io/post/2010-10-18-scim/">为SCIM制作输入法</a></h1>
+			
+		</header>
+		
+		<div class="entry">
+			
+				<p>在Linux下我一直都是用SCIM输入平台下的五笔输入法，最近用的有点不太爽了，因为默认的五笔输入法只有GB2312字符集，很多字都打不出来，比如“囧”和一些粤语聊天中经常用到的字（“冇”……“嘢”等），所以就打算弄一个如Windows下极点五笔那样的支持GBK字符集的输入法。</p>
+<p>首先，找一个现成的码表文件研究一下它的格式到底是怎么样的，SCIM的码表文件可以在/usr/share/scim/tables这个文件夹下面找到，先拿一个五笔的码表来看一下吧：</p>
+<pre><code class="language-bash">mkdir ~/wb-tables
+cd ~/wb-tables
+cp /usr/share/scim/tables/Wubi.bin ./
+</code></pre>
+<p>SCIM的码表文件是一个bin文件，还不可以直接编辑，所以要把它转换成文本文件。SCIM提供了码表制作的工具scim-make-table可以完成这个工作：</p>
+<pre><code class="language-bash">scim-make-table Wubi.bin -o Wubi.txt
+</code></pre>
+<p>现在可以使用文件编辑器打开Wubi.txt来看一下这码表文件到底是怎么组成的，一个码表文件大概是这样的：</p>
+<pre><code class="language-bash">SCIM_Generic_Table_Phrase_Library_TEXT
+VERSION_1_0
+### Begin Table definition.
+BEGIN_DEFINITION
+UUID = c584dfc8-c088-4908-9802-80eba0fb6ad9
+SERIAL_NUMBER = 20040227
+ICON = /usr/share/scim/icons/Wubi.png
+NAME = Wubi
+NAME.zh_CN = 五笔字型
+NAME.zh_HK = 五筆字型
+NAME.zh_TW = 五筆字型
+LANGUAGES = zh_CN,zh_SG,zh_TW,zh_HK
+### AUTHOR =
+STATUS_PROMPT = 中
+KEYBOARD_LAYOUT = US_Default
+VALID_INPUT_CHARS = abcdefghijklmnopqrstuvwxy
+### KEY_END_CHARS =
+SINGLE_WILDCARD_CHAR = z
+MULTI_WILDCARD_CHAR = *
+SPLIT_KEYS = apostrophe
+COMMIT_KEYS = space
+FORWARD_KEYS = Return
+SELECT_KEYS = 1,2,3,4,5,6,7,8,9
+PAGE_UP_KEYS = Page_Up,comma,minus
+PAGE_DOWN_KEYS = Page_Down,period,equal
+MODE_SWITCH_KEYS = Shift+KeyRelease+Shift_L,Shift+KeyRelease+Shift_R
+FULL_WIDTH_PUNCT_KEYS = Control+period
+FULL_WIDTH_LETTER_KEYS = Shift+space
+MAX_KEY_LENGTH = 4
+SHOW_KEY_PROMPT = FALSE
+AUTO_SELECT = TRUE
+AUTO_WILDCARD = TRUE
+AUTO_COMMIT = TRUE
+AUTO_SPLIT = FALSE
+AUTO_FILL = FALSE
+DISCARD_INVALID_KEY = TRUE
+DYNAMIC_ADJUST = FALSE
+ALWAYS_SHOW_LOOKUP = TRUE
+USE_FULL_WIDTH_PUNCT = TRUE
+DEF_FULL_WIDTH_PUNCT = TRUE
+USE_FULL_WIDTH_LETTER = TRUE
+DEF_FULL_WIDTH_LETTER = FALSE
+BEGIN_CHAR_PROMPTS_DEFINITION
+a 工
+b 子
+c 又
+d 大
+e 月
+f 土
+g 王
+h 目
+i 水
+j 日
+k 口
+l 田
+m 山
+n 已
+o 火
+p 之
+q 金
+r 白
+s 木
+t 禾
+u 立
+v 女
+w 人
+x 纟
+y 言
+END_CHAR_PROMPTS_DEFINITION
+END_DEFINITION
+
+### Begin Table data.
+BEGIN_TABLE
+a 工 戈
+aa 式 戒
+……
+……
+END_TABLE
+</code></pre>
+<p>由这个文件可以看到，SCIM的码表文件主要是由描述部分（BEGIN_DEFINITION……END_DEFINITION）和码表部分（BEGIN_TABLE……END_TABLE）两大块组成的。描述部分主要是输入法的一些基本的设置，如输入法的名字、输入法的图标等；码表部分就是各字、词对应的输入码，也是我们要修改的主要部分。</p>
+<p>自己重新做一个码表这么艰难并重复制作轮子的事情当然不会做，只要在一个现成的码表上面添加上我们需要的部分就可以了。码表文件的获得方法有很多，可以使 用工具软件把windows下面的输入法码表转换成文本文件再拿来用就可以了。我使用的是for VIMIM的极点五笔字库，可以在<a href="http://code.google.com/p/vimim-data/wiki/Download">这里</a>下载。把下载的码表内容替换掉Wubi.txt文件中码表部分的内容就可以了。当然也可顺便改一下输入法的名字和图标，贴上自己的标志。接下来就是把Wubi.txt转换成SCIM的码表文件就可以了，还是使用scim-make-table：</p>
+<pre><code class="language-bash">scim-make-table Wubi.txt -b -o NWubi.bin
+</code></pre>
+<p>最后把生成的码表文件复制到/usr/share/scim/tables，如果有修改输入法的图标文件，把图标文件（48x48大小png图片）也复制到/usr/share/scim/icons下面，重新启动输入法，就可以在可用码表里选择启用自己生成的输入法了。</p>
+<pre><code class="language-bash">sudo cp NWubi.bin /usr/share/scim/tables
+sudo cp NWubi.png usr/share/scim/icons
+</code></pre>
+
+			
+		</div>
+		<footer class="clearfix">
+			
+
+			
+				<div class="tags">
+					<i class="fa fa-tags"></i>
+					
+						<a href="https://ohosanna.github.io/tag/OMv3BBGIqa/">#tools</a>
+					
+						<a href="https://ohosanna.github.io/tag/AiI8RqKUuf/">#linux</a>
+					
+				</div>
+			
+
+			
+
+		</footer>
+	</div>
+</article>
+            
+              <article class="">
+	<div class="post-content">
+		<header>
+			
+				<div class="meta">
+					<div class="icon">
+						<i class="fa fa-file"></i>
+					</div>
+					<time datetime="2010-09-10 08:07:57">2010-09-10 08:07:57</time>
+				</div>
+			
+
+			
+				<h1 class="title" data-role="articleTitle"><a href="https://ohosanna.github.io/post/2010-09-10-robots-txt-404/">robots.txt 404错误的解决</a></h1>
+			
+		</header>
+		
+		<div class="entry">
+			
+				<p>最近查看网站日志，在404错误的条目里，出现最多的就是robots.txt这个文件了。原本以为是我真没有这个文件，但一检查发出根目录下是有这个文件的，但为什么还是显示page not found呢？然后我再以为是Drupal的问题，但是在网上搜索了好久，也没听说这个跟Drupal有什么关系。最后才突然想到可能是Nginx服务配置的问题，一查配置文件，果然是我没有加上txt文件支持的原因。</p>
+<p>知道原因就好办了，在配置文件里加入下面几句就可以了：</p>
+<pre><code>location ~ (^\/|\.html|\.css|\.jpg|favicon\.ico|robots\.txt|\.png|\.js|\.gif)$ {
+        root   /var/www/hosts/nofool.info/htdocs/;
+        access_log        off;
+        expires           30d;
+}
+</code></pre>
+<p>上面的例子是为Nginx加入一些静态文件如html、css、jpg、png、js、gif的支持，txt文件则只支持robots.txt，ico文件则只支持favicon.ico</p>
+
+			
+		</div>
+		<footer class="clearfix">
+			
+
+			
+				<div class="tags">
+					<i class="fa fa-tags"></i>
+					
+						<a href="https://ohosanna.github.io/tag/5WODUjd50/">#web</a>
+					
+						<a href="https://ohosanna.github.io/tag/rl_12cyHPB/">#nginx</a>
+					
+				</div>
+			
+
+			
+
+		</footer>
+	</div>
+</article>
+            
+              <article class="">
+	<div class="post-content">
+		<header>
+			
+				<div class="meta">
+					<div class="icon">
+						<i class="fa fa-file"></i>
+					</div>
+					<time datetime="2010-08-14 09:14:57">2010-08-14 09:14:57</time>
+				</div>
+			
+
+			
+				<h1 class="title" data-role="articleTitle"><a href="https://ohosanna.github.io/post/2010-08-14-php/">自动把网址转换超链接代码（PHP 版）</a></h1>
+			
+		</header>
+		
+		<div class="entry">
+			
+				<p>有时候需要在提交内容的时候，自动把一些网址自动加上超链接。下面是一个PHP的样例，支持转换普通的链接、FTP地址、E-mail地址、Twitter类的链接，里面的正则表达式稍作修改也可以用于其它的语言。</p>
+<pre><code class="language-php">function add_links($text) {
+    $text= preg_replace(&quot;/(^|[\s ])([\w]*?)((ht|f)tp(s)?:\/\/[\w]+[^ \,\&quot;\n\r\t&lt;]*)/is&quot;, &quot;$1$2&lt;a href=\&quot;$3\&quot; &gt;$3&lt;/a&gt;&quot;, $text); /* http[s]//** */
+    $text= preg_replace(&quot;/(^|[\s ])([\w]*?)((www|ftp)\.[^ \,\&quot;\t\n\r&lt;]*)/is&quot;, &quot;$1$2&lt;a href=\&quot;http://$3\&quot; &gt;$3&lt;/a&gt;&quot;, $text); /* ftp://** */
+    $text= preg_replace(&quot;/(^|[\n ])([a-z0-9&amp;\-_\.]+?)@([\w\-]+\.([\w\-\.]+)+)/i&quot;, &quot;$1&lt;a href=\&quot;mailto:$2@$3\&quot;&gt;$2@$3&lt;/a&gt;&quot;, $text); /* E-mail */
+    $text= preg_replace(&quot;/@(\w+)/&quot;, '&lt;a href=&quot;http://www.twitter.com/$1&quot; target=&quot;_blank&quot;&gt;@$1&lt;/a&gt;', $text); /* @twitter 用户 */
+    $text= preg_replace(&quot;/\#(\w+)/&quot;, '&lt;a href=&quot;http://search.twitter.com/search?q=$1&quot; target=&quot;_blank&quot;&gt;#$1&lt;/a&gt;',$text); /* #twitter 搜索 */
+    return $text;
+}
+</code></pre>
+
+			
+		</div>
+		<footer class="clearfix">
+			
+
+			
+				<div class="tags">
+					<i class="fa fa-tags"></i>
+					
+						<a href="https://ohosanna.github.io/tag/NcZ28YSP6h/">#php</a>
+					
+						<a href="https://ohosanna.github.io/tag/5WODUjd50/">#web</a>
+					
+				</div>
+			
+
+			
+
+		</footer>
+	</div>
+</article>
+            
+              <article class="">
+	<div class="post-content">
+		<header>
+			
+				<div class="meta">
+					<div class="icon">
+						<i class="fa fa-file"></i>
+					</div>
+					<time datetime="2010-08-07 09:23:35">2010-08-07 09:23:35</time>
+				</div>
+			
+
+			
+				<h1 class="title" data-role="articleTitle"><a href="https://ohosanna.github.io/post/2010-08-07-nginx-fcgiperl/">Nginx 通过FCGI支持Perl 脚本</a></h1>
+			
+		</header>
+		
+		<div class="entry">
+			
+				<p>折腾了几天，总算让Nginx也支持Perl程序了。因为之前已经配置好PHP的环境了（请看<a href="http://nofool.info/content/gentoo%E4%B8%8B%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AEnginx">这里</a>），所以这一次只是想在原来的的基础上增加Perl的支持而已，所以并不打算需要太复杂的设置。在网上找了很久，都没有找到比较好的教程，很多都需要自己写一个接口程序和启动脚本，并且很多都是不太符合Gentoo启动脚本的格式。最后没办法，只有自己慢慢的摸索了，参照PHP的相关设置，绕了不少的弯路，才总算成功了。趁自己还没有忘记之前，把过程记录下来吧。</p>
+<p>首先，需要的是一个Perl的接口程序，找了好久我才找到了<a href="http://nginx.localdomain.pl/wiki/FcgiWrap" target="_blank">fcgiwrap</a>这个程序，还好，Gentoo的Portage里也有，可以直接emerge它：</p>
+<pre><code class="language-bash">$ eix fcgiwrap
+[*] www-misc/fcgiwrap
+     Available versions:  (~)1.0.2-r1 (**)9999
+     Installed versions:  1.0.2-r1(22时48分47秒 2010年08月05日)
+     Homepage:            ht tp://nginx.localdomain.pl/wiki/FcgiWrap
+     Description:         Simple FastCGI wrapper for CGI scripts (CGI support for nginx)
+$ sudo emerge fcgiwrapp
+</code></pre>
+<p>创建一个spawn-fcgi启动脚本的链接</p>
+<pre><code class="language-bash">$ sudo ln -s /etc/init.d/spawn-fcgi  /etc/init.d/spawn-fcgi.pl
+</code></pre>
+<p>spawn-fcgi的配置文件</p>
+<pre><code class="language-bash">$ cat /etc/conf.d/spawn-fcgi.pl
+# Copyright 1999-2009 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: /var/cvsroot/gentoo-x86/www-servers/spawn-fcgi/files/spawn-fcgi.confd,v 1.6 2009/09/28 08:38:02 bangert Exp $
+
+# DO NOT MODIFY THIS FILE DIRECTLY! CREATE A COPY AND MODIFY THAT INSTEAD!
+
+# The FCGI process can be made available through a filesystem socket or
+# through a inet socket. One and only one of the two types must be choosen.
+# Default is the inet socket.
+
+# The filename specified by
+# FCGI_SOCKET will be suffixed with a number for each child process, for
+# example, fcgi.socket-1. 
+# Leave empty to use an IP socket (default). See below. Enabling this, 
+# disables the IP socket.
+# 
+FCGI_SOCKET=/var/run/fcgiwrap.sock
+
+# When using FCGI_PORT, connections will only be accepted from the following
+# address. The default is 127.0.0.1. Use 0.0.0.0 to bind to all addresses.
+#
+#FCGI_ADDRESS=127.0.0.1
+
+# The port specified by FCGI_PORT is the port used
+# by the first child process. If this is set to 1234 then subsequent child
+# processes will use 1235, 1236, etc.
+#
+FCGI_PORT=
+
+# The path to your FastCGI application. These sometimes carry the .fcgi
+# extension but not always. For PHP, you should usually point this to
+# /usr/bin/php-cgi.
+#
+FCGI_PROGRAM=/usr/sbin/fcgiwrap
+
+# The number of child processes to spawn. The default is 1.
+#
+#FCGI_CHILDREN=1
+
+# If you want to run your application inside a chroot then specify the
+# directory here. Leave this blank otherwise.
+#
+#FCGI_CHROOT=
+
+# If you want to run your application from a specific directiory specify
+# it here. Leave this blank otherwise.
+#
+#FCGI_CHDIR=
+
+# The user and group to run your application as. If you do not specify these,
+# the application will be run as root:root.
+#
+FCGI_USER=nginx
+FCGI_GROUP=nginx
+
+# Additional options you might want to pass to spawn-fcgi
+#
+FCGI_EXTRA_OPTIONS=&quot;-M 0700&quot;
+
+# If your application requires additional environment variables, you may
+# specify them here. See PHP example below.
+#
+ALLOWED_ENV=&quot;PATH&quot;
+</code></pre>
+<p>Nginx配置文件</p>
+<pre><code class="language-bash">$ cat /etc/nginx/vhosts/example.com.conf
+server {
+    listen 127.0.0.1;
+    server_name *.example.com example.com;
+    access_log /var/log/nginx/localhost.access_log main;
+    error_log /var/log/nginx/localhost.error_log info;
+    root /var/www/example.com;
+
+    location ~ .*.php$ {
+	include /etc/nginx/fastcgi.conf;
+	fastcgi_pass 127.0.0.1:1234;
+	fastcgi_param  SCRIPT_FILENAME  /var/www/example.com/$fastcgi_script_name;
+	fastcgi_index index.php;
+    }
+    
+    location ~ .*.pl$ {
+	include /etc/nginx/fastcgi_params;
+	fastcgi_pass unix:/var/run/fcgiwrap.sock-1;
+	fastcgi_param  SCRIPT_FILENAME  /var/www/example.com/$fastcgi_script_name;
+	fastcgi_index index.pl;
+    }
+</code></pre>
+<p>这里要注意的是，网上很多教程和fcgiwrap的手册（man page）都是把fastcgi_pass设置成 <em>fastcgi_pass unix:/var/run/fcgiwrap.sock</em> ，但是这样是不行的，查看Nginx的Log会发现有提示如下的错误：</p>
+<blockquote>
+<p>connect() to unix:/var/run/fcgiwrap.sock failed (2: No such file or directory) while connecting to upstream, client: 127.0.0.1, server: *.example.com, request: &quot;GET /test.pl HTTP/1.1&quot;, upstream: &quot;fastcgi://unix:/var/run/fcgiwrap.sock:&quot;, host: &quot;example.com&quot;</p>
+</blockquote>
+<p>原因嘛，/etc/conf.d/spawn-fcgi.pl 这个配置文件里关于FCGI_SOCKET的注释有写到，FCGI_SOCKET会为每个子进程添加一个数字后缀，所以需要把这个后缀也要添加上去，例如： <em>fastcgi_pass unix:/var/run/fcgiwrap.sock-1;</em> 否则，就会出现文件找不到的错误，我在这里花了不少的时间才明白这个事情。</p>
+<p>最后，启动相关服务：</p>
+<pre><code class="language-bash">$ sudo /etc/init.d/spawn-fcgi.pl start
+$ sudo /etc/init.d/nginx start
+</code></pre>
+<p>如果还是出现502错语并且Nginx Log 里有这样的出错提示：</p>
+<blockquote>
+<p>upstream closed prematurely FastCGI stdout while reading response header from upstream, client: 127.0.0.1, server: *.example.com, request: &quot;GET /test.pl HTTP/1.1&quot;, upstream: &quot;fastcgi://unix:/var/run/fcgiwrap.sock-1:&quot;, host: &quot;example.com&quot;</p>
+</blockquote>
+<p>那就要检查一下你的Perl文件是否有读取跟执行的权限了（755），在这里又花了我很长的时间才明白Perl脚本是还需要执行的权限的，这一点跟PHP不同。</p>
+
+			
+		</div>
+		<footer class="clearfix">
+			
+
+			
+				<div class="tags">
+					<i class="fa fa-tags"></i>
+					
+						<a href="https://ohosanna.github.io/tag/5WODUjd50/">#web</a>
+					
+						<a href="https://ohosanna.github.io/tag/rl_12cyHPB/">#nginx</a>
+					
+				</div>
+			
+
+			
+
+		</footer>
+	</div>
+</article>
+            
+              <article class="">
+	<div class="post-content">
+		<header>
+			
+				<div class="meta">
+					<div class="icon">
+						<i class="fa fa-file"></i>
+					</div>
+					<time datetime="2010-08-03 09:27:22">2010-08-03 09:27:22</time>
+				</div>
+			
+
+			
+				<h1 class="title" data-role="articleTitle"><a href="https://ohosanna.github.io/post/2010-08-03-jquery/">Jquery 取消链接的默认行为</a></h1>
+			
+		</header>
+		
+		<div class="entry">
+			
+				<p>在写JS脚本，特别是AJAX脚本的过程中，经常要取消掉对象的默认行为。比如说点击某个链接，就在特定的块里面显示另一个页面的内容，通常是这样来写：</p>
+<pre><code class="language-html">&lt;div id=&quot;ajax&quot;&gt;
+&lt;/div&gt;
+&lt;a href=&quot;ajax.html&quot; class=&quot;load&quot;&gt;&lt;/a&gt;
+</code></pre>
+<p>Jquery Js</p>
+<pre><code class="language-javascript">$('.load a').bind ('click', function() {
+    var link = $(this).attr(&quot;href&quot;);
+   $('#ajax').load(link);
+});
+</code></pre>
+<p>这样的确可以把ajax.html的内容填入到#ajax中，但脚本执行完之后，页面还是会跳转到ajax.html这个页面，这可不是我所希望的结果。最后，查资料得到解决的方法，在脚本执行后返回flase取消默认的行为并阻止事件起泡（bubbling up），最后的脚本如下：</p>
+<pre><code class="language-javascript">$('.load a').bind ('click', function() {
+    var link = $(this).attr(&quot;href&quot;);
+   $('#ajax').load(link);
+   return false;
+});
+</code></pre>
+<p>另外，通过preventDefault() 方法只取消默认的行为，通过使用 stopPropagation() 方法只阻止一个事件起泡。</p>
+<p>参考网址：<a href="http://api.jquery.com/bind/" target="_blank">http://api.jquery.com/bind/</a></p>
+
+			
+		</div>
+		<footer class="clearfix">
+			
+
+			
+				<div class="tags">
+					<i class="fa fa-tags"></i>
+					
+						<a href="https://ohosanna.github.io/tag/mqHput8Ruj/">#Web</a>
+					
+				</div>
+			
+
+			
+
+		</footer>
+	</div>
+</article>
+            
+              <article class="">
+	<div class="post-content">
+		<header>
+			
+				<div class="meta">
+					<div class="icon">
+						<i class="fa fa-file"></i>
+					</div>
+					<time datetime="2010-07-25 16:50:06">2010-07-25 16:50:06</time>
+				</div>
+			
+
+			
+				<h1 class="title" data-role="articleTitle"><a href="https://ohosanna.github.io/post/2010-07-26-css3-gradients/">理解CSS3渐变背景</a></h1>
+			
+		</header>
+		
+		<div class="entry">
+			
+				<p>CSS3 支持定义渐变的背景，这个功能很实用，今天试用了一下，大概了解了基本的设置方式。</p>
+<p>####Webkit 类浏览器设置</p>
+<pre><code class="language-css">/*例子*/
+background: -webkit-gradient(linear, 0 0, 0 100%, from(red), to(blue));
+</code></pre>
+<ul>
+<li>第一个参数指定渐变的类型，linear（线性）或 radial（径向）。</li>
+<li>第二个参数指定渐变开始的坐标，可以是数字或百分比，也可以是关键字（如 left-top ）。</li>
+<li>第三个参数指定渐变结束的坐标。</li>
+<li>第四个参数指定渐变开始的颜色。</li>
+<li>第五个参数指定渐变结束的颜色。</li>
+</ul>
+<p>####Firefox 浏览器设</p>
+<pre><code class="language-css">/*例子*/
+background: -moz-linear-gradient(top, red, blue);
+</code></pre>
+<ul>
+<li>第一个参数指定从哪里开始渐变（ 例子里用的是 top ，还可以是指定角度如-45deg ）。</li>
+<li>第二个参数指定渐变开始的颜色（red）。</li>
+<li>第三个参数指定渐变结束的颜色（blue）。</li>
+</ul>
+<p>####效果</p>
+<div style="width: 300px; height: 150px; background: -moz-linear-gradient(center top , red, blue) repeat scroll 0% 0% transparent;">
+</div>
+<p>参考链接：<br>
+<a href="http://webkit.org/blog/175/introducing-css-gradients/">http://webkit.org/blog/175/introducing-css-gradients/</a><br>
+<a href="http://hacks.mozilla.org/2009/11/css-gradients-firefox-36/">http://hacks.mozilla.org/2009/11/css-gradients-firefox-36/</a></p>
+
+			
+		</div>
+		<footer class="clearfix">
+			
+
+			
+				<div class="tags">
+					<i class="fa fa-tags"></i>
+					
+						<a href="https://ohosanna.github.io/tag/5WODUjd50/">#web</a>
+					
+				</div>
+			
+
+			
+
+		</footer>
+	</div>
+</article>
+            
+              <article class="">
+	<div class="post-content">
+		<header>
+			
+				<div class="meta">
+					<div class="icon">
+						<i class="fa fa-file"></i>
+					</div>
+					<time datetime="2010-07-17 08:50:50">2010-07-17 08:50:50</time>
+				</div>
+			
+
+			
+				<h1 class="title" data-role="articleTitle"><a href="https://ohosanna.github.io/post/2010-07-17-perl-weather-script/">获取实时天气信息的Perl脚本</a></h1>
+			
+		</header>
+		
+		<div class="entry">
+			
+				<p>前段时间捣鼓Perl的时候，根据Yahoo!提供的天气状况API写了一个脚本，用来分析并获取实时天气状况的信息。现在这个脚本已经被我用在了FVWM桌面的天气状况显示上，另外，使用第三方的飞信API，还可以把信息发到手机上，呵呵，还是蛮实用的。</p>
+<pre><code class="language-perl">#!/usr/bin/perl
+###################
+#根据http://developer.yahoo.com/weather/提供的API写的获取天气信息的脚本
+#作者：一介农夫
+###################
+use strict;
+use Encode;
+use LWP::Simple;
+
+my $wid = &quot;2161664&quot;; #中山，各个具体的wid可以到http://weather.yahoo.com/去搜索
+my $url = &quot;http://weather.yahooapis.com/forecastrss?w=$wid&amp;amp;u=c&quot;;
+my $data = get($url);
+$data =~ s/&lt;yweather\:forecast\s+(.*?)\&gt;//g; #去掉后面重复的两行信息，暂时未知如何处理。
+my $use_data = &quot;&quot;;
+my @temp_data = split /\n/, $data;
+foreach my $temp_data (@temp_data) { 
+    if ($temp_data =~ m/&lt;yweather\:\w+\s+(.*?)\&gt;/ig) {
+	$use_data .= &quot; &quot;.$1.&quot;\n&quot;;
+    }
+}
+
+my %info =&quot;&quot;;
+my %text = (
+    &quot;0&quot; =&gt; &quot;龙卷风&quot;,
+    &quot;1&quot; =&gt; &quot;热带风暴&quot;,
+    &quot;2&quot; =&gt; &quot;飓风&quot;,
+    &quot;3&quot; =&gt; &quot;雷暴&quot;,
+    &quot;4&quot; =&gt; &quot;雷暴&quot;,
+    &quot;5&quot; =&gt; &quot;雨夹雪&quot;,
+    &quot;6&quot; =&gt; &quot;雨夹雪&quot;,
+    &quot;7&quot; =&gt; &quot;雨夹雪&quot;,
+    &quot;8&quot; =&gt; &quot;冻雨&quot;,
+    &quot;9&quot; =&gt; &quot;冻雨&quot;,
+    &quot;10&quot; =&gt; &quot;冻雨&quot;,
+    &quot;11&quot; =&gt; &quot;阵雨&quot;,
+    &quot;12&quot; =&gt; &quot;阵雨&quot;,
+    &quot;13&quot; =&gt; &quot;小雪&quot;,
+    &quot;14&quot; =&gt; &quot;阵雪&quot;,
+    &quot;15&quot; =&gt; &quot;风吹雪&quot;,
+    &quot;16&quot; =&gt; &quot;雪&quot;,
+    &quot;17&quot; =&gt; &quot;冰雹&quot;,
+    &quot;18&quot; =&gt; &quot;冻雨&quot;,
+    &quot;19&quot; =&gt; &quot;沙尘&quot;,
+    &quot;20&quot; =&gt; &quot;模糊&quot;,
+    &quot;21&quot; =&gt; &quot;薄雾&quot;,
+    &quot;22&quot; =&gt; &quot;污染&quot;,
+    &quot;23&quot; =&gt; &quot;坏天气&quot;,
+    &quot;24&quot; =&gt; &quot;有风&quot;,
+    &quot;25&quot; =&gt; &quot;冷&quot;,
+    &quot;26&quot; =&gt; &quot;阴天&quot;,
+    &quot;27&quot; =&gt; &quot;多云&quot;,
+    &quot;28&quot; =&gt; &quot;多云&quot;,
+    &quot;29&quot; =&gt; &quot;少云&quot;,
+    &quot;30&quot; =&gt; &quot;少云&quot;,
+    &quot;31&quot; =&gt; &quot;晴&quot;,
+    &quot;32&quot; =&gt; &quot;睛&quot;,
+    &quot;33&quot; =&gt; &quot;睛&quot;,
+    &quot;34&quot; =&gt; &quot;睛&quot;,
+    &quot;35&quot; =&gt; &quot;雨夹冰雹&quot;,
+    &quot;36&quot; =&gt; &quot;热&quot;,
+    &quot;37&quot; =&gt; &quot;局部雷暴&quot;,
+    &quot;38&quot; =&gt; &quot;分散雷雨&quot;,
+    &quot;39&quot; =&gt; &quot;分散雷雨&quot;,
+    &quot;40&quot; =&gt;&quot;零星阵雨&quot;,
+    &quot;41&quot; =&gt; &quot;大雪&quot;,
+    &quot;42&quot; =&gt; &quot;零星阵雪&quot;,
+    &quot;43&quot; =&gt; &quot;大雪&quot;,
+    &quot;44&quot; =&gt; &quot;多云&quot;,
+    &quot;45&quot; =&gt; &quot;雷阵雨&quot;,
+    &quot;46&quot; =&gt; &quot;阵雨&quot;,
+    &quot;47&quot; =&gt; &quot;雷阵雨&quot;,
+    &quot;3200&quot; =&gt; &quot;未知&quot;,
+);
+my @condition = split /\&quot;\s+/, $use_data;
+foreach my $condition (@condition) {
+    if ($condition =~ m/^(\w+)\s*=\s*\&quot;(.*?)\s*$/) {
+	$info{&quot;$1&quot;} = &quot;$2&quot;;
+    }
+}
+
+my $message = decode (&quot;utf8&quot;,&quot;中山天气状况：$text{$info{code}}，温度：$info{temp}C，湿度：$info{humidity}％，能见度：$info{visibility}KM，气压：$info{pressure}MB，日出时间：$info{sunrise}，日落时间$info{sunset}。$info{date}&quot;);
+$message = encode(&quot;gb2312&quot;,&quot;$message&quot;); #中文编码处理
+
+my $send_url = &quot;http://sms.api.bz/fetion.php?username=手机号码&amp;password=飞信密码&amp;sendto=要发送的手机&amp;message=$message&quot;;
+#print $message;
+my $send = get($send_url);
+</code></pre>
+
+			
+		</div>
+		<footer class="clearfix">
+			
+
+			
+				<div class="tags">
+					<i class="fa fa-tags"></i>
+					
+						<a href="https://ohosanna.github.io/tag/MrafNp4eW/">#perl</a>
+					
+				</div>
+			
+
+			
+
+		</footer>
+	</div>
+</article>
+            
+              <article class="">
+	<div class="post-content">
+		<header>
+			
+				<div class="meta">
+					<div class="icon">
+						<i class="fa fa-file"></i>
+					</div>
+					<time datetime="2010-07-15 09:01:35">2010-07-15 09:01:35</time>
+				</div>
+			
+
+			
+				<h1 class="title" data-role="articleTitle"><a href="https://ohosanna.github.io/post/2010-07-15-iframe-auto-height/">iframe 自适应高度</a></h1>
+			
+		</header>
+		
+		<div class="entry">
+			
+				<p>今天碰到一个客户要求在他网站上添加背景音乐，还是要求切换栏目的时候不间断那种。囧……我最讨厌就是浏览有背景音乐的网站了，但好像国内的小企业客户就喜欢这样来。没办法，要不间断播放我只能想到用框架大法了。</p>
+<p>但是，用iframe的时候却碰到了个问题：</p>
+<pre><code class="language-html">&lt;iframe src=&quot;source.html&quot; width=&quot;100%&quot; scrolling=&quot;auto&quot; frameborder=&quot;0&quot; height=&quot;100%&quot;&gt;
+&lt;/iframe&gt;
+</code></pre>
+<p>这样设置的时候，在FF下是OK的，但是在IE下，却是有两个滚动条，这并不是我想要的效果。</p>
+<p>最后，在网上找了一段JS代码，将iframe的高度自动设置，问题得到解决。</p>
+<pre><code class="language-javascript">&lt;script type=&quot;text/javascript&quot;&gt;
+ function SetCwinHeight(){
+  var iframeid=document.getElementById(&quot;web&quot;); //iframe id
+  if (document.getElementById){
+   if (iframeid &amp;&amp; !window.opera){
+    if (iframeid.contentDocument &amp;&amp; iframeid.contentDocument.body.offsetHeight){
+     iframeid.height = iframeid.contentDocument.body.offsetHeight;
+    }else if(iframeid.Document &amp;&amp; iframeid.Document.body.scrollHeight){
+     iframeid.height = iframeid.Document.body.scrollHeight;
+    }
+   }
+  }
+ }
+&lt;/script&gt;
+&lt;iframe id=&quot;web&quot; onload=&quot;Javascript:SetCwinHeight()&quot; src=&quot;source.html&quot; width=&quot;100%&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; height=&quot;87&quot;&gt;
+&lt;/iframe&gt;
+</code></pre>
+
+			
+		</div>
+		<footer class="clearfix">
+			
+
+			
+				<div class="tags">
+					<i class="fa fa-tags"></i>
+					
+						<a href="https://ohosanna.github.io/tag/5WODUjd50/">#web</a>
+					
+				</div>
+			
+
+			
+
+		</footer>
+	</div>
+</article>
+            
+            <nav id="pagination">
+  
+    <a href="https://ohosanna.github.io/page/2/" class="prev"><i class="fa fa-chevron-left"></i> 上一页</a>
+  
+  
+    <a href="https://ohosanna.github.io/page/4/" class="next">下一页 <i class="fa fa-chevron-right"></i></a>
+  
+  </nav>
+
+          </div>
+        </div>
+      </div>
+      <nav id="pagination">
+  
+    <a href="https://ohosanna.github.io/page/2/" class="prev"><i class="fa fa-chevron-left"></i> 上一页</a>
+  
+  
+    <a href="https://ohosanna.github.io/page/4/" class="next">下一页 <i class="fa fa-chevron-right"></i></a>
+  
+  </nav>
+
+      <footer id="footer">
+	<div class="center">
+		&copy; 2020
+		
+			Ohosanna&#39;s Blog
+		.
+		&nbsp;&nbsp;
+		  
+		<a class="rss" href="https://ohosanna.github.io/atom.xml" target="_blank">
+		&nbsp;&nbsp;
+			<i class="fa fa-rss"></i> RSS
+		</a>
+		&nbsp;&nbsp;
+		Blog generated by <a href="https://gridea.dev" target="_blank">Gridea</a>
+	</div>
+</footer>
+    </div>
+
+    <script>
+  (function() {
+    var $app = document.getElementById('app');
+    var $titles = document.querySelectorAll('.post-content .title[data-role=articleTitle]');
+    var $fixTitle = document.getElementById('fixTitle');
+    window.onscroll = function() {
+      if (document.documentElement.clientWidth > 500) {
+        var $header = document.getElementById('header');
+        var y = window.scrollY || window.pageYOffset;
+        if (y > 40) {
+          $header.classList.add('small');
+        } else {
+          $header.classList.remove('small');
+        }
+      }
+
+      for (var i = $titles.length - 1; i >= 0; i--) {
+        var titleEl = $titles[i];
+        var rect = titleEl.getBoundingClientRect();
+        if (rect.top < 100) {
+          var text = titleEl.textContent;
+          $app.classList.add('show-fixtitle');
+          $fixTitle.querySelector('.title').textContent = text;
+          break;
+        } else if (i === 0) {
+          $app.classList.remove('show-fixtitle');
+        }
+      }
+
+    }
+  }());
+</script>
+
+  <link rel="stylesheet" href="http://cdn.bootcss.com/highlight.js/8.0/styles/tomorrow.min.css" />
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>

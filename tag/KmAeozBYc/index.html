@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>rails | Ohosanna&#39;s Blog</title>
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="description" content="{{ themeConfig.description }}">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://ohosanna.github.io/favicon.ico?v=1583250719344">
+<link rel="stylesheet" href="https://ohosanna.github.io/styles/main.css">
+
+
+
+
+
+    <meta name="description" content="老农家的一亩三分地">
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      
+<header id="header">
+  <div id="fixTitle"><div class="center"><h1 class="title"></h1></div></div>
+	<div class="center">
+		<div class="wrap">
+			<div id="site">
+				<h1>
+          <a href="https://ohosanna.github.io">Ohosanna&#39;s Blog</a>
+          
+            <a class="github social-icon" href="https://github.com/">
+              <svg aria-hidden="true" class="octicon octicon-mark-github" height="28" role="img" version="1.1" viewBox="0 0 16 16" width="28"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59 0.4 0.07 0.55-0.17 0.55-0.38 0-0.19-0.01-0.82-0.01-1.49-2.01 0.37-2.53-0.49-2.69-0.94-0.09-0.23-0.48-0.94-0.82-1.13-0.28-0.15-0.68-0.52-0.01-0.53 0.63-0.01 1.08 0.58 1.23 0.82 0.72 1.21 1.87 0.87 2.33 0.66 0.07-0.52 0.28-0.87 0.51-1.07-1.78-0.2-3.64-0.89-3.64-3.95 0-0.87 0.31-1.59 0.82-2.15-0.08-0.2-0.36-1.02 0.08-2.12 0 0 0.67-0.21 2.2 0.82 0.64-0.18 1.32-0.27 2-0.27 0.68 0 1.36 0.09 2 0.27 1.53-1.04 2.2-0.82 2.2-0.82 0.44 1.1 0.16 1.92 0.08 2.12 0.51 0.56 0.82 1.27 0.82 2.15 0 3.07-1.87 3.75-3.65 3.95 0.29 0.25 0.54 0.73 0.54 1.48 0 1.07-0.01 1.93-0.01 2.2 0 0.21 0.15 0.46 0.55 0.38C13.71 14.53 16 11.53 16 8 16 3.58 12.42 0 8 0z"></path></svg>
+            </a>
+          
+				</h1>
+				
+					<h2>
+					  <a href="https://ohosanna.github.io">老农家的一亩三分地</a>
+          </h2>
+        
+			</div>
+			<nav id="menu">
+				<ul>
+          
+            
+              <li>
+                <a href="/" class="site-nav">
+                  首页
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/archives" class="site-nav">
+                  归档
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/tags" class="site-nav">
+                  标签
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/post/about" class="site-nav">
+                  关于
+                </a>
+              </li>
+            
+          
+				</ul>
+			</nav>
+		</div>
+	</div>
+</header>
+
+      <div class="main-container center">
+        <div class="content-container" data-aos="fade-up">
+          <h2 class="current-tag">标签: rails</h2>
+          
+            <article class="">
+	<div class="post-content">
+		<header>
+			
+				<div class="meta">
+					<div class="icon">
+						<i class="fa fa-file"></i>
+					</div>
+					<time datetime="2015-01-21 16:15:46">2015-01-21 16:15:46</time>
+				</div>
+			
+
+			
+				<h1 class="title" data-role="articleTitle"><a href="https://ohosanna.github.io/post/2015-01-21-ajax-pagination-with-kaminari/">Kaminari 的 AJAX 翻页实现</a></h1>
+			
+		</header>
+		
+		<div class="entry">
+			
+				<p><a href="https://github.com/amatsuda/kaminari">Kaminari</a> 是 rails 上一个很有名的分页管理扩展，使用极其简单。最近刚在项目中使用了它的 AJAX 分页的功能，记录一下实现的过程。</p>
+<p>基本的安装和配置就不啰嗦了，按照官方的教程来进行就是啦，具体记录一下 AJAX 翻页实现的部分，以一个订单列表的页面作例子。</p>
+
+			
+		</div>
+		<footer class="clearfix">
+			
+				<div class="read-more">
+					<a href="https://ohosanna.github.io/post/2015-01-21-ajax-pagination-with-kaminari/#more" class="more-link"><i class="fa fa-ellipsis-h"></i></a>
+				</div>
+			
+
+			
+				<div class="tags">
+					<i class="fa fa-tags"></i>
+					
+						<a href="https://ohosanna.github.io/tag/KmAeozBYc/">#rails</a>
+					
+						<a href="https://ohosanna.github.io/tag/5WODUjd50/">#web</a>
+					
+				</div>
+			
+
+			
+
+		</footer>
+	</div>
+</article>
+          
+            <article class="">
+	<div class="post-content">
+		<header>
+			
+				<div class="meta">
+					<div class="icon">
+						<i class="fa fa-file"></i>
+					</div>
+					<time datetime="2011-12-22 23:01:47">2011-12-22 23:01:47</time>
+				</div>
+			
+
+			
+				<h1 class="title" data-role="articleTitle"><a href="https://ohosanna.github.io/post/2011-12-23-activerecord/">通过ActiveRecord访问数据表的列信息</a></h1>
+			
+		</header>
+		
+		<div class="entry">
+			
+				<p>ActiveRecord提供了很多方法来访问某个模型数据表的列信息</p>
+<p><strong>columns</strong><br>
+返回一个列对象的数组</p>
+<p><strong>columns_hash</strong><br>
+类似columns方法，不过返回一个以列名为key，列对象为value的hash数组</p>
+<p><strong>column_names</strong><br>
+返回模型数据表列名的数组</p>
+
+			
+		</div>
+		<footer class="clearfix">
+			
+				<div class="read-more">
+					<a href="https://ohosanna.github.io/post/2011-12-23-activerecord/#more" class="more-link"><i class="fa fa-ellipsis-h"></i></a>
+				</div>
+			
+
+			
+				<div class="tags">
+					<i class="fa fa-tags"></i>
+					
+						<a href="https://ohosanna.github.io/tag/KmAeozBYc/">#rails</a>
+					
+						<a href="https://ohosanna.github.io/tag/5WODUjd50/">#web</a>
+					
+				</div>
+			
+
+			
+
+		</footer>
+	</div>
+</article>
+          
+            <article class="">
+	<div class="post-content">
+		<header>
+			
+				<div class="meta">
+					<div class="icon">
+						<i class="fa fa-file"></i>
+					</div>
+					<time datetime="2011-12-20 08:45:20">2011-12-20 08:45:20</time>
+				</div>
+			
+
+			
+				<h1 class="title" data-role="articleTitle"><a href="https://ohosanna.github.io/post/2011-12-20-gentoonginxthinrails/">Gentoo下用Nginx+thin构建rails环境</a></h1>
+			
+		</header>
+		
+		<div class="entry">
+			
+				<p>Thin是一个ruby的轻量级的web server，根据它官网的提供的对比可以看到它在100个并发连接的情况下性能还是不错的。<br>
+<img src="http://chart.apis.google.com/chart?cht=bvg&amp;chd=t:14.98,54.8723076923077,48.9184615384615,79.9276923076923%7C14.8692307692308,65.0615384615385,70.4446153846154,89.5553846153846%7C14.9476923076923,35.1123076923077,70.18,88.6769230769231&amp;chbh=16&amp;chs=350x150&amp;chl=WEBrick%7CMongrel%7CEvented%20M.%7CThin&amp;chco=000000,666666,cccccc&amp;chdl=1%20c%20req.%7C10%20c%20req.%7C100%20c%20req." alt="Benchmarks" loading="lazy"></p>
+
+			
+		</div>
+		<footer class="clearfix">
+			
+				<div class="read-more">
+					<a href="https://ohosanna.github.io/post/2011-12-20-gentoonginxthinrails/#more" class="more-link"><i class="fa fa-ellipsis-h"></i></a>
+				</div>
+			
+
+			
+				<div class="tags">
+					<i class="fa fa-tags"></i>
+					
+						<a href="https://ohosanna.github.io/tag/KmAeozBYc/">#rails</a>
+					
+						<a href="https://ohosanna.github.io/tag/5WODUjd50/">#web</a>
+					
+						<a href="https://ohosanna.github.io/tag/AiI8RqKUuf/">#linux</a>
+					
+				</div>
+			
+
+			
+
+		</footer>
+	</div>
+</article>
+          
+            <article class="">
+	<div class="post-content">
+		<header>
+			
+				<div class="meta">
+					<div class="icon">
+						<i class="fa fa-file"></i>
+					</div>
+					<time datetime="2011-08-11 19:42:29">2011-08-11 19:42:29</time>
+				</div>
+			
+
+			
+				<h1 class="title" data-role="articleTitle"><a href="https://ohosanna.github.io/post/2011-08-12-rails3-1-invalid-multibyte-char/">Rails3.1 invalid multibyte char错误处理</a></h1>
+			
+		</header>
+		
+		<div class="entry">
+			
+				<p>代码文件有中文字符，打开页面时报：invalid multibyte char (US-ASCII) 错误，造成这个错误是因为Ruby1.9默认用ASCII编码来读源码的，如果代码里有非ASCII字符，就会发生这个错误。解决的方法是在有非ASCII字符文件的<strong>首行</strong>指定encoding即可，如：</p>
+<pre><code class="language-ruby"># encoding: utf-8
+class ApplicationController &lt; ActionController::Base
+  protect_from_forgery
+  ...........
+</code></pre>
+<p>话说每一个文件都要加是不是太麻烦点？就不能弄一个全局设定来吗？</p>
+
+			
+		</div>
+		<footer class="clearfix">
+			
+
+			
+				<div class="tags">
+					<i class="fa fa-tags"></i>
+					
+						<a href="https://ohosanna.github.io/tag/KmAeozBYc/">#rails</a>
+					
+						<a href="https://ohosanna.github.io/tag/5WODUjd50/">#web</a>
+					
+				</div>
+			
+
+			
+
+		</footer>
+	</div>
+</article>
+          
+            <article class="">
+	<div class="post-content">
+		<header>
+			
+				<div class="meta">
+					<div class="icon">
+						<i class="fa fa-file"></i>
+					</div>
+					<time datetime="2011-06-03 00:00:00">2011-06-03 00:00:00</time>
+				</div>
+			
+
+			
+				<h1 class="title" data-role="articleTitle"><a href="https://ohosanna.github.io/post/2011-06-03-gentoo-rails3-1/">Gentoo Rails3.1 安装笔记</a></h1>
+			
+		</header>
+		
+		<div class="entry">
+			
+				<p>Rails3.1的预览版已经出来了，带来了Sass和CoffeeScript这两个另人向往的新特性，因此打算在我的Gentoo上也安装来体验一下。</p>
+<pre><code class="language-bash">rvm use 1.9.2@railspre --create
+gem update --system
+gem update rake
+gem install rails -v &quot;&gt;=3.1.0rc&quot;
+</code></pre>
+<p>Rails3.1 需要Ruby &gt;=1.9.2、Gem &gt;=1.8.5、Rake &gt;=0.9.1，所以在安装Rails3.1之前要先检查一下这几个条件是否已经达到。另外，现在网上看到的很多文章都说安装Rails3.1只需要：</p>
+<pre><code class="language-bash">gem install rails --pre
+</code></pre>
+<p>但这个方法从6月1日起就不行了，所以现在要改用：</p>
+<pre><code class="language-bash">gem install rails -v &quot;&gt;=3.1.0rc&quot;
+</code></pre>
+<p>当使用rvm转到Ruby1.9.2的时候，会有一个问题：</p>
+<pre><code class="language-bash">gem -v
+&lt;internal:lib/rubygems/custom_require&gt;:29:in `require': no such file to load -- auto_gem (LoadError)
+	from &lt;internal:lib/rubygems/custom_require&gt;:29:in `require'
+</code></pre>
+<p>这是因为gem还在使用系统的库文件，而系统里的Ruby版本还是1.8.*版的，所以就会有这个问题，解决的方法就是执行：</p>
+<pre><code class="language-bash">unset RUBYOPT
+</code></pre>
+<p>另外，使用Rails3.1的时候出现下面的错误：</p>
+<pre><code>ExecJS::RuntimeError
+Could not find a JavaScript runtime&lt;/pre&gt;&lt;/p&gt;
+ExecJS::RuntimeError
+</code></pre>
+<p>这是因为系统里没有JS的运行环境，只要手动安装一个就可以了：</p>
+<pre><code class="language-bash">emerge nodejs
+</code></pre>
+
+			
+		</div>
+		<footer class="clearfix">
+			
+
+			
+				<div class="tags">
+					<i class="fa fa-tags"></i>
+					
+						<a href="https://ohosanna.github.io/tag/KmAeozBYc/">#rails</a>
+					
+						<a href="https://ohosanna.github.io/tag/AiI8RqKUuf/">#linux</a>
+					
+				</div>
+			
+
+			
+
+		</footer>
+	</div>
+</article>
+          
+            <article class="">
+	<div class="post-content">
+		<header>
+			
+				<div class="meta">
+					<div class="icon">
+						<i class="fa fa-file"></i>
+					</div>
+					<time datetime="2011-04-25 03:41:38">2011-04-25 03:41:38</time>
+				</div>
+			
+
+			
+				<h1 class="title" data-role="articleTitle"><a href="https://ohosanna.github.io/post/2011-04-25-gentooror-rails-cli-loaderror/">Gentoo下ROR rails/cli (LoadError)的解决</a></h1>
+			
+		</header>
+		
+		<div class="entry">
+			
+				<p>想学习一下Ruby On Rail，结果安装完之后运行rails new demo新建新项目的时候出现以下错误：</p>
+<pre><code>/usr/lib64/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `gem_original_require': no such file to load -- rails/cli (LoadError)
+from /usr/lib64/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `require'
+from /usr/lib64/ruby/gems/1.8/gems/rails-3.0.3/bin/rails:8
+from /usr/bin/rails:8:in `load'
+from /usr/bin/rails:8
+</code></pre>
+<p>最后是通过</p>
+<pre><code class="language-bash">emerge -avD =dev-ruby/rack-mount-0.6.13 =dev-ruby/erubis-2.6.6 
+</code></pre>
+<p>把两个包降级后暂时解决这个问题，是新包有问题还是有其它的解决方法？</p>
+
+			
+		</div>
+		<footer class="clearfix">
+			
+
+			
+				<div class="tags">
+					<i class="fa fa-tags"></i>
+					
+						<a href="https://ohosanna.github.io/tag/KmAeozBYc/">#rails</a>
+					
+						<a href="https://ohosanna.github.io/tag/AiI8RqKUuf/">#linux</a>
+					
+				</div>
+			
+
+			
+
+		</footer>
+	</div>
+</article>
+          
+
+          <nav id="pagination">
+  
+  
+  </nav>
+
+        </div>
+      </div>
+    </div>
+
+    <script>
+  (function() {
+    var $app = document.getElementById('app');
+    var $titles = document.querySelectorAll('.post-content .title[data-role=articleTitle]');
+    var $fixTitle = document.getElementById('fixTitle');
+    window.onscroll = function() {
+      if (document.documentElement.clientWidth > 500) {
+        var $header = document.getElementById('header');
+        var y = window.scrollY || window.pageYOffset;
+        if (y > 40) {
+          $header.classList.add('small');
+        } else {
+          $header.classList.remove('small');
+        }
+      }
+
+      for (var i = $titles.length - 1; i >= 0; i--) {
+        var titleEl = $titles[i];
+        var rect = titleEl.getBoundingClientRect();
+        if (rect.top < 100) {
+          var text = titleEl.textContent;
+          $app.classList.add('show-fixtitle');
+          $fixTitle.querySelector('.title').textContent = text;
+          break;
+        } else if (i === 0) {
+          $app.classList.remove('show-fixtitle');
+        }
+      }
+
+    }
+  }());
+</script>
+
+  <link rel="stylesheet" href="http://cdn.bootcss.com/highlight.js/8.0/styles/tomorrow.min.css" />
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>

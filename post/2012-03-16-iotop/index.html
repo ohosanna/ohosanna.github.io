@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>监控磁盘读写状况 | Ohosanna&#39;s Blog</title>
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="description" content="{{ themeConfig.description }}">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://ohosanna.github.io/favicon.ico?v=1583250719344">
+<link rel="stylesheet" href="https://ohosanna.github.io/styles/main.css">
+
+
+
+
+
+    <meta name="description" content="有时候，我们经常会碰到这样的情形：没有运行任何程序，磁盘却不断执行读写动作，硬盘指示灯常亮，各种操作迟缓甚至鼠标都不能动了。碰到这种状况往往会感到束手无策，并且就纳闷了：究竟是什么程序在读写我的磁盘呢？
+这个时候，就到iotop登场的时候了..." />
+    <meta name="keywords" content="tools,linux" />
+  </head>
+  <body>
+
+      
+<header id="header">
+  <div id="fixTitle"><div class="center"><h1 class="title"></h1></div></div>
+	<div class="center">
+		<div class="wrap">
+			<div id="site">
+				<h1>
+          <a href="https://ohosanna.github.io">Ohosanna&#39;s Blog</a>
+          
+            <a class="github social-icon" href="https://github.com/">
+              <svg aria-hidden="true" class="octicon octicon-mark-github" height="28" role="img" version="1.1" viewBox="0 0 16 16" width="28"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59 0.4 0.07 0.55-0.17 0.55-0.38 0-0.19-0.01-0.82-0.01-1.49-2.01 0.37-2.53-0.49-2.69-0.94-0.09-0.23-0.48-0.94-0.82-1.13-0.28-0.15-0.68-0.52-0.01-0.53 0.63-0.01 1.08 0.58 1.23 0.82 0.72 1.21 1.87 0.87 2.33 0.66 0.07-0.52 0.28-0.87 0.51-1.07-1.78-0.2-3.64-0.89-3.64-3.95 0-0.87 0.31-1.59 0.82-2.15-0.08-0.2-0.36-1.02 0.08-2.12 0 0 0.67-0.21 2.2 0.82 0.64-0.18 1.32-0.27 2-0.27 0.68 0 1.36 0.09 2 0.27 1.53-1.04 2.2-0.82 2.2-0.82 0.44 1.1 0.16 1.92 0.08 2.12 0.51 0.56 0.82 1.27 0.82 2.15 0 3.07-1.87 3.75-3.65 3.95 0.29 0.25 0.54 0.73 0.54 1.48 0 1.07-0.01 1.93-0.01 2.2 0 0.21 0.15 0.46 0.55 0.38C13.71 14.53 16 11.53 16 8 16 3.58 12.42 0 8 0z"></path></svg>
+            </a>
+          
+				</h1>
+				
+					<h2>
+					  <a href="https://ohosanna.github.io">老农家的一亩三分地</a>
+          </h2>
+        
+			</div>
+			<nav id="menu">
+				<ul>
+          
+            
+              <li>
+                <a href="/" class="site-nav">
+                  首页
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/archives" class="site-nav">
+                  归档
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/tags" class="site-nav">
+                  标签
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/post/about" class="site-nav">
+                  关于
+                </a>
+              </li>
+            
+          
+				</ul>
+			</nav>
+		</div>
+	</div>
+</header>
+
+      <div id="content">
+        <div class="center">
+          <div class="main-col">
+            <article class="">
+	<div class="post-content">
+		<header>
+			
+				<div class="meta">
+					<div class="icon">
+						<i class="fa fa-file"></i>
+					</div>
+					<time datetime="2012-03-15 22:13:46">2012-03-15 22:13:46</time>
+				</div>
+			
+
+			
+				<h1 class="title">监控磁盘读写状况</h1>
+			
+		</header>
+		
+		<div class="entry">
+			
+				<p>有时候，我们经常会碰到这样的情形：没有运行任何程序，磁盘却不断执行读写动作，硬盘指示灯常亮，各种操作迟缓甚至鼠标都不能动了。碰到这种状况往往会感到束手无策，并且就纳闷了：<strong>究竟是什么程序在读写我的磁盘呢？</strong></p>
+<p>这个时候，就到<strong>iotop</strong>登场的时候了！</p>
+<!-- more -->
+<pre><code class="language-bash">##如果没有安装就要先安装
+sudo emerge -av iotop
+sudo iotop
+</code></pre>
+<p>通过输出的信息，可以清楚的知道是什么程序在读/写磁盘，速度如何，程序的Pid等……<br>
+<img src="http://pic.yupoo.com/ohosanna_v/BOKAi0HK/1r9cb.png" alt="iotop 截图" loading="lazy"></p>
+<p>等等…… <strong>我怎么知道某一个程序读取了哪些文件呢？</strong></p>
+<p>这个时候，就要求助于&quot;lsof&quot;了！</p>
+<pre><code class="language-bash">sudo emerge -av lsof
+lsof -c 软件名
+##也可以根据被频繁读取的文件来反查程序
+lsof 文件名
+##还可以根据目录进行查询
+lsof | grep 目录路径
+</code></pre>
+<p>如果您想知道是系统中哪个用户正在读写的哪个文件，结合 iotop 和 lsof：</p>
+<pre><code class="language-bash">sudo iotop
+##查看用户的进程
+
+lsof -p PID    ##按该用户进程 pid 查看所打开的文件
+lsof -u USERNAME    ##按用户名查看打开的文件
+
+##列出某用户的某进程打开的文件
+lsof -u USERNAME -c APPNAME
+</code></pre>
+
+			
+		</div>
+		<footer class="clearfix">
+			
+
+			
+				<div class="tags">
+					<i class="fa fa-tags"></i>
+					
+						<a href="https://ohosanna.github.io/tag/OMv3BBGIqa/">#tools</a>
+					
+						<a href="https://ohosanna.github.io/tag/AiI8RqKUuf/">#linux</a>
+					
+				</div>
+			
+
+			
+				
+					<div class="next-post">
+					<div class="next">下一篇</div>
+					<a href="https://ohosanna.github.io/post/2012-02-16-ruby-count-item-in-array/">
+						<h3 class="post-title">
+						计算一个数组里各元素出现的次数（ruby）
+						</h3>
+					</a>
+					</div>
+				
+				
+			
+
+		</footer>
+	</div>
+</article>
+          </div>
+        </div>
+      </div>
+      <footer id="footer">
+	<div class="center">
+		&copy; 2020
+		
+			Ohosanna&#39;s Blog
+		.
+		&nbsp;&nbsp;
+		  
+		<a class="rss" href="https://ohosanna.github.io/atom.xml" target="_blank">
+		&nbsp;&nbsp;
+			<i class="fa fa-rss"></i> RSS
+		</a>
+		&nbsp;&nbsp;
+		Blog generated by <a href="https://gridea.dev" target="_blank">Gridea</a>
+	</div>
+</footer>
+    </div>
+
+    <script>
+  (function() {
+    var $app = document.getElementById('app');
+    var $titles = document.querySelectorAll('.post-content .title[data-role=articleTitle]');
+    var $fixTitle = document.getElementById('fixTitle');
+    window.onscroll = function() {
+      if (document.documentElement.clientWidth > 500) {
+        var $header = document.getElementById('header');
+        var y = window.scrollY || window.pageYOffset;
+        if (y > 40) {
+          $header.classList.add('small');
+        } else {
+          $header.classList.remove('small');
+        }
+      }
+
+      for (var i = $titles.length - 1; i >= 0; i--) {
+        var titleEl = $titles[i];
+        var rect = titleEl.getBoundingClientRect();
+        if (rect.top < 100) {
+          var text = titleEl.textContent;
+          $app.classList.add('show-fixtitle');
+          $fixTitle.querySelector('.title').textContent = text;
+          break;
+        } else if (i === 0) {
+          $app.classList.remove('show-fixtitle');
+        }
+      }
+
+    }
+  }());
+</script>
+
+  <link rel="stylesheet" href="http://cdn.bootcss.com/highlight.js/8.0/styles/tomorrow.min.css" />
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>

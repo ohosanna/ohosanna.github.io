@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>linux | Ohosanna&#39;s Blog</title>
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="description" content="{{ themeConfig.description }}">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://ohosanna.github.io/favicon.ico?v=1583250719344">
+<link rel="stylesheet" href="https://ohosanna.github.io/styles/main.css">
+
+
+
+
+
+    <meta name="description" content="老农家的一亩三分地">
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      
+<header id="header">
+  <div id="fixTitle"><div class="center"><h1 class="title"></h1></div></div>
+	<div class="center">
+		<div class="wrap">
+			<div id="site">
+				<h1>
+          <a href="https://ohosanna.github.io">Ohosanna&#39;s Blog</a>
+          
+            <a class="github social-icon" href="https://github.com/">
+              <svg aria-hidden="true" class="octicon octicon-mark-github" height="28" role="img" version="1.1" viewBox="0 0 16 16" width="28"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59 0.4 0.07 0.55-0.17 0.55-0.38 0-0.19-0.01-0.82-0.01-1.49-2.01 0.37-2.53-0.49-2.69-0.94-0.09-0.23-0.48-0.94-0.82-1.13-0.28-0.15-0.68-0.52-0.01-0.53 0.63-0.01 1.08 0.58 1.23 0.82 0.72 1.21 1.87 0.87 2.33 0.66 0.07-0.52 0.28-0.87 0.51-1.07-1.78-0.2-3.64-0.89-3.64-3.95 0-0.87 0.31-1.59 0.82-2.15-0.08-0.2-0.36-1.02 0.08-2.12 0 0 0.67-0.21 2.2 0.82 0.64-0.18 1.32-0.27 2-0.27 0.68 0 1.36 0.09 2 0.27 1.53-1.04 2.2-0.82 2.2-0.82 0.44 1.1 0.16 1.92 0.08 2.12 0.51 0.56 0.82 1.27 0.82 2.15 0 3.07-1.87 3.75-3.65 3.95 0.29 0.25 0.54 0.73 0.54 1.48 0 1.07-0.01 1.93-0.01 2.2 0 0.21 0.15 0.46 0.55 0.38C13.71 14.53 16 11.53 16 8 16 3.58 12.42 0 8 0z"></path></svg>
+            </a>
+          
+				</h1>
+				
+					<h2>
+					  <a href="https://ohosanna.github.io">老农家的一亩三分地</a>
+          </h2>
+        
+			</div>
+			<nav id="menu">
+				<ul>
+          
+            
+              <li>
+                <a href="/" class="site-nav">
+                  首页
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/archives" class="site-nav">
+                  归档
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/tags" class="site-nav">
+                  标签
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/post/about" class="site-nav">
+                  关于
+                </a>
+              </li>
+            
+          
+				</ul>
+			</nav>
+		</div>
+	</div>
+</header>
+
+      <div class="main-container center">
+        <div class="content-container" data-aos="fade-up">
+          <h2 class="current-tag">标签: linux</h2>
+          
+            <article class="">
+	<div class="post-content">
+		<header>
+			
+				<div class="meta">
+					<div class="icon">
+						<i class="fa fa-file"></i>
+					</div>
+					<time datetime="2011-02-18 14:03:53">2011-02-18 14:03:53</time>
+				</div>
+			
+
+			
+				<h1 class="title" data-role="articleTitle"><a href="https://ohosanna.github.io/post/2011-02-18-urxvt256/">让urxvt支持256色</a></h1>
+			
+		</header>
+		
+		<div class="entry">
+			
+				<p>urxvt默认是不支持256色的，所以在urxvt里使作vim的时候，那些漂亮的配色方案就没有效果了。幸好，urxvt要加入256色的支持很简单，执行：</p>
+<pre><code class="language-bash">echo &quot;x11-terms/rxvt-unicode 256-color&quot; &gt;&gt; /etc/portage/package.use
+emerge -av rxvt-unicode
+</code></pre>
+<p>要vim也支持256色，需要在~/.vimrc里加入：</p>
+<pre><code>set t_Co=256
+</code></pre>
+<p>最终效果：<br>
+<img src="http://farm6.static.flickr.com/5097/5470168820_3afe3b07e2.jpg" alt="urxvt with 256 color by hosanna_cn, on Flickr" loading="lazy"></p>
+
+			
+		</div>
+		<footer class="clearfix">
+			
+
+			
+				<div class="tags">
+					<i class="fa fa-tags"></i>
+					
+						<a href="https://ohosanna.github.io/tag/OMv3BBGIqa/">#tools</a>
+					
+						<a href="https://ohosanna.github.io/tag/AiI8RqKUuf/">#linux</a>
+					
+				</div>
+			
+
+			
+
+		</footer>
+	</div>
+</article>
+          
+            <article class="">
+	<div class="post-content">
+		<header>
+			
+				<div class="meta">
+					<div class="icon">
+						<i class="fa fa-file"></i>
+					</div>
+					<time datetime="2010-10-27 13:03:00">2010-10-27 13:03:00</time>
+				</div>
+			
+
+			
+				<h1 class="title" data-role="articleTitle"><a href="https://ohosanna.github.io/post/2010-10-27-vim/">VIM中为一个文件设置多种文件类型</a></h1>
+			
+		</header>
+		
+		<div class="entry">
+			
+				<p>VIM的很多插件功能都是根据文件类型来开启的，比如说代码高亮和自动补全等功能。而VIM又是根据文件扩展名来确定文件类型，有很多时候，在一个文件里可能要用到针对多种文件类型的功能，比如说在编辑php文件的时候，因为经常是要同时包含php和html代码，所以想同时打开snipMate针对php和html的自动补全功能。这个时候，单单是针对文件扩展名来确定文件类型是不够的，这样只能使用一种文件类型的特性。幸好，VIM是可以为一种文件扩展名定义多种文件类型的，只需要VIM的配置文件里加入如下配置：</p>
+<pre><code class="language-bash">if has(&quot;autocmd&quot;)
+    autocmd BufRead,BufNewFile *.php set filetype=html.php
+endif
+</code></pre>
+<p>这样在用VIM打开php文件时，就会同时应用html和php两种文件类型的特性，多个文件类型之间用“.”号连接。</p>
+
+			
+		</div>
+		<footer class="clearfix">
+			
+
+			
+				<div class="tags">
+					<i class="fa fa-tags"></i>
+					
+						<a href="https://ohosanna.github.io/tag/AiI8RqKUuf/">#linux</a>
+					
+				</div>
+			
+
+			
+
+		</footer>
+	</div>
+</article>
+          
+            <article class="">
+	<div class="post-content">
+		<header>
+			
+				<div class="meta">
+					<div class="icon">
+						<i class="fa fa-file"></i>
+					</div>
+					<time datetime="2010-10-18 02:27:49">2010-10-18 02:27:49</time>
+				</div>
+			
+
+			
+				<h1 class="title" data-role="articleTitle"><a href="https://ohosanna.github.io/post/2010-10-18-scim/">为SCIM制作输入法</a></h1>
+			
+		</header>
+		
+		<div class="entry">
+			
+				<p>在Linux下我一直都是用SCIM输入平台下的五笔输入法，最近用的有点不太爽了，因为默认的五笔输入法只有GB2312字符集，很多字都打不出来，比如“囧”和一些粤语聊天中经常用到的字（“冇”……“嘢”等），所以就打算弄一个如Windows下极点五笔那样的支持GBK字符集的输入法。</p>
+<p>首先，找一个现成的码表文件研究一下它的格式到底是怎么样的，SCIM的码表文件可以在/usr/share/scim/tables这个文件夹下面找到，先拿一个五笔的码表来看一下吧：</p>
+<pre><code class="language-bash">mkdir ~/wb-tables
+cd ~/wb-tables
+cp /usr/share/scim/tables/Wubi.bin ./
+</code></pre>
+<p>SCIM的码表文件是一个bin文件，还不可以直接编辑，所以要把它转换成文本文件。SCIM提供了码表制作的工具scim-make-table可以完成这个工作：</p>
+<pre><code class="language-bash">scim-make-table Wubi.bin -o Wubi.txt
+</code></pre>
+<p>现在可以使用文件编辑器打开Wubi.txt来看一下这码表文件到底是怎么组成的，一个码表文件大概是这样的：</p>
+<pre><code class="language-bash">SCIM_Generic_Table_Phrase_Library_TEXT
+VERSION_1_0
+### Begin Table definition.
+BEGIN_DEFINITION
+UUID = c584dfc8-c088-4908-9802-80eba0fb6ad9
+SERIAL_NUMBER = 20040227
+ICON = /usr/share/scim/icons/Wubi.png
+NAME = Wubi
+NAME.zh_CN = 五笔字型
+NAME.zh_HK = 五筆字型
+NAME.zh_TW = 五筆字型
+LANGUAGES = zh_CN,zh_SG,zh_TW,zh_HK
+### AUTHOR =
+STATUS_PROMPT = 中
+KEYBOARD_LAYOUT = US_Default
+VALID_INPUT_CHARS = abcdefghijklmnopqrstuvwxy
+### KEY_END_CHARS =
+SINGLE_WILDCARD_CHAR = z
+MULTI_WILDCARD_CHAR = *
+SPLIT_KEYS = apostrophe
+COMMIT_KEYS = space
+FORWARD_KEYS = Return
+SELECT_KEYS = 1,2,3,4,5,6,7,8,9
+PAGE_UP_KEYS = Page_Up,comma,minus
+PAGE_DOWN_KEYS = Page_Down,period,equal
+MODE_SWITCH_KEYS = Shift+KeyRelease+Shift_L,Shift+KeyRelease+Shift_R
+FULL_WIDTH_PUNCT_KEYS = Control+period
+FULL_WIDTH_LETTER_KEYS = Shift+space
+MAX_KEY_LENGTH = 4
+SHOW_KEY_PROMPT = FALSE
+AUTO_SELECT = TRUE
+AUTO_WILDCARD = TRUE
+AUTO_COMMIT = TRUE
+AUTO_SPLIT = FALSE
+AUTO_FILL = FALSE
+DISCARD_INVALID_KEY = TRUE
+DYNAMIC_ADJUST = FALSE
+ALWAYS_SHOW_LOOKUP = TRUE
+USE_FULL_WIDTH_PUNCT = TRUE
+DEF_FULL_WIDTH_PUNCT = TRUE
+USE_FULL_WIDTH_LETTER = TRUE
+DEF_FULL_WIDTH_LETTER = FALSE
+BEGIN_CHAR_PROMPTS_DEFINITION
+a 工
+b 子
+c 又
+d 大
+e 月
+f 土
+g 王
+h 目
+i 水
+j 日
+k 口
+l 田
+m 山
+n 已
+o 火
+p 之
+q 金
+r 白
+s 木
+t 禾
+u 立
+v 女
+w 人
+x 纟
+y 言
+END_CHAR_PROMPTS_DEFINITION
+END_DEFINITION
+
+### Begin Table data.
+BEGIN_TABLE
+a 工 戈
+aa 式 戒
+……
+……
+END_TABLE
+</code></pre>
+<p>由这个文件可以看到，SCIM的码表文件主要是由描述部分（BEGIN_DEFINITION……END_DEFINITION）和码表部分（BEGIN_TABLE……END_TABLE）两大块组成的。描述部分主要是输入法的一些基本的设置，如输入法的名字、输入法的图标等；码表部分就是各字、词对应的输入码，也是我们要修改的主要部分。</p>
+<p>自己重新做一个码表这么艰难并重复制作轮子的事情当然不会做，只要在一个现成的码表上面添加上我们需要的部分就可以了。码表文件的获得方法有很多，可以使 用工具软件把windows下面的输入法码表转换成文本文件再拿来用就可以了。我使用的是for VIMIM的极点五笔字库，可以在<a href="http://code.google.com/p/vimim-data/wiki/Download">这里</a>下载。把下载的码表内容替换掉Wubi.txt文件中码表部分的内容就可以了。当然也可顺便改一下输入法的名字和图标，贴上自己的标志。接下来就是把Wubi.txt转换成SCIM的码表文件就可以了，还是使用scim-make-table：</p>
+<pre><code class="language-bash">scim-make-table Wubi.txt -b -o NWubi.bin
+</code></pre>
+<p>最后把生成的码表文件复制到/usr/share/scim/tables，如果有修改输入法的图标文件，把图标文件（48x48大小png图片）也复制到/usr/share/scim/icons下面，重新启动输入法，就可以在可用码表里选择启用自己生成的输入法了。</p>
+<pre><code class="language-bash">sudo cp NWubi.bin /usr/share/scim/tables
+sudo cp NWubi.png usr/share/scim/icons
+</code></pre>
+
+			
+		</div>
+		<footer class="clearfix">
+			
+
+			
+				<div class="tags">
+					<i class="fa fa-tags"></i>
+					
+						<a href="https://ohosanna.github.io/tag/OMv3BBGIqa/">#tools</a>
+					
+						<a href="https://ohosanna.github.io/tag/AiI8RqKUuf/">#linux</a>
+					
+				</div>
+			
+
+			
+
+		</footer>
+	</div>
+</article>
+          
+            <article class="">
+	<div class="post-content">
+		<header>
+			
+				<div class="meta">
+					<div class="icon">
+						<i class="fa fa-file"></i>
+					</div>
+					<time datetime="2010-07-03 07:04:29">2010-07-03 07:04:29</time>
+				</div>
+			
+
+			
+				<h1 class="title" data-role="articleTitle"><a href="https://ohosanna.github.io/post/2010-07-03-chmsee-chm/">CHMSEE打开.chm文件显示空白问题的解决</a></h1>
+			
+		</header>
+		
+		<div class="entry">
+			
+				<p>Chmsee是Linux下用来查看chm帮助文件的一个软件，虽然同类的软件有不少，比如Xchm、Gnochm等，但在中文支持方面，Chmsee无疑是我用过的chm阅读器里做的最好的一个。自从不知道什么时候开始，我系统里的Chmsee打开.chm文件时，总是显示不了文件的内容，只是显示一片空白，偶尔还可以看得到目录，但点进去的时候还是空白。因为一直没有什么时间折腾，也没有频繁阅读chm文档，就算偶尔要看，还可以临时用户Xchm来应付着。</p>
+<p>但是，昨天碰到一个问题，虽然以前知道在一个chm的电子书里有看到过解决的方法，但用Xchm打开的时候，中文全部成了乱码，根本看不了。只好求助于Google，结果是没有结果！就在我放弃的时候，ls 家目录的时候，看到了一个.chmsee的文件夹，敏感的神经使我感觉到问题可能就在这里，于是决定rm -r .chmsee 。完成后重新打开chm文档，可爱的文字终于出现了，看来真的是人品大爆发了！！</p>
+<p>现在想想应该是Chmsee升级到某一个版本之后处理数据的方式发生了变化，但是我家目录.chmsee 下的Chmsee配置和缓存还是使用以前版本的内容，所以导致这个问题的出现，删掉后重新生成就OK了。</p>
+
+			
+		</div>
+		<footer class="clearfix">
+			
+
+			
+				<div class="tags">
+					<i class="fa fa-tags"></i>
+					
+						<a href="https://ohosanna.github.io/tag/AiI8RqKUuf/">#linux</a>
+					
+				</div>
+			
+
+			
+
+		</footer>
+	</div>
+</article>
+          
+            <article class="">
+	<div class="post-content">
+		<header>
+			
+				<div class="meta">
+					<div class="icon">
+						<i class="fa fa-file"></i>
+					</div>
+					<time datetime="2010-06-29 15:29:16">2010-06-29 15:29:16</time>
+				</div>
+			
+
+			
+				<h1 class="title" data-role="articleTitle"><a href="https://ohosanna.github.io/post/2010-06-29-mpfr3-0libpng1-4/">升级mpfr3.0和libpng1.4碰到的问题</a></h1>
+			
+		</header>
+		
+		<div class="entry">
+			
+				<p>有一两个月没有升级过系统了，昨天想升级一下，居然有一百多个包要升级！想想反正这两天可以先用公司的电脑来做事，再加上办公室里也有空调，本本应该可以撑得过去，于是就开着机让它自行升级，我就一边做我的事去。结果到到了下班发现还有GCC这个超巨型的没有升级，因为赶着回家，就Ctrl-C中止后把本本带回家了。</p>
+
+			
+		</div>
+		<footer class="clearfix">
+			
+				<div class="read-more">
+					<a href="https://ohosanna.github.io/post/2010-06-29-mpfr3-0libpng1-4/#more" class="more-link"><i class="fa fa-ellipsis-h"></i></a>
+				</div>
+			
+
+			
+				<div class="tags">
+					<i class="fa fa-tags"></i>
+					
+						<a href="https://ohosanna.github.io/tag/AiI8RqKUuf/">#linux</a>
+					
+				</div>
+			
+
+			
+
+		</footer>
+	</div>
+</article>
+          
+            <article class="">
+	<div class="post-content">
+		<header>
+			
+				<div class="meta">
+					<div class="icon">
+						<i class="fa fa-file"></i>
+					</div>
+					<time datetime="2010-05-27 16:46:15">2010-05-27 16:46:15</time>
+				</div>
+			
+
+			
+				<h1 class="title" data-role="articleTitle"><a href="https://ohosanna.github.io/post/2010-05-28-gentoo-nginx-install/">Gentoo下安装与配置Nginx</a></h1>
+			
+		</header>
+		
+		<div class="entry">
+			
+				<p>####1、安装Nginx</p>
+<p>为Nginx加入fastcgi(用来支持PHP)和ssl(支持https加密链接)USE标记：</p>
+<pre><code class="language-bash">echo &quot;www-servers/nginx fastcgi ssl&quot; &gt;&gt; /etc/portage/package.use
+</code></pre>
+<p>然后emerge nginx:</p>
+<pre><code class="language-bash">emerge -av nginx
+</code></pre>
+<p>####2、配置Nginx</p>
+<p>Nginx的配置文件位于 /etc/nginx/下。(/etc/nginx/nginx.conf是主要的配置文件)</p>
+<p>通常需要修改的是服务器配置部分：</p>
+<blockquote>
+<p>/etc/nginx/nginx.conf</p>
+</blockquote>
+<pre><code>server {
+listen          80;
+server_name     www.example.com;
+access_log      /var/log/nginx/www.example.com.access_log main;
+error_log       /var/log/nginx/www.example.com.error_log info;
+root /var/www/www.example.com/htdocs;
+}
+</code></pre>
+<p>####配置 Fast CGI</p>
+<p>如果站点是只有html的静态文件，可以不用CGI支持，如果你想使用动态脚本（如PHP），则要通过CGI来实现。Nginx并不直接支持CGI，因此需要安装一个辅助程序将CGI的输出结果返回给Nginx，这里使用spawn-fcgi。</p>
+<p>spawn-fcgi还未进入稳定分支，因此要先加入keywords</p>
+<pre><code class="language-bash">echo www-servers/spawn-fcgi ~amd64 &gt;&gt; /etc/portage/package.keywords
+</code></pre>
+<p>然后就可以emerge它了：</p>
+<pre><code class="language-bash">emerge spawn-fcgi
+</code></pre>
+<p>安装PHP并加入cgi和force-cgi-redirect支持。</p>
+<pre><code class="language-bash">echo dev-lang/php cgi force-cgi-redirect &gt;&gt; /etc/portage/package.use
+emerge php
+</code></pre>
+<p>为Spawn-fcgi创建一个启动脚本链接</p>
+<pre><code class="language-bash">ln -sf /etc/init.d/spawn-fcgi /etc/init.d/spawn-fcgi.php
+</code></pre>
+<p>创建spawn-fcgi.php配置文件：</p>
+<pre><code class="language-bash">cp /etc/conf.d/spawn-fcgi /etc/conf.d/spawn-fcgi.php
+</code></pre>
+<p>配置文件内容：</p>
+<blockquote>
+<p>/etc/conf.d/spawn-fcgi.php</p>
+</blockquote>
+<pre><code># Copyright 1999-2004 Gentoo Foundation
+
+# Distributed under the terms of the GNU General Public License v2
+
+# $Header: /var/cvsroot/gentoo-x86/www-servers/lighttpd/files/spawn-fcgi.confd,v 1.1 2005/02/14 11:39:01 ka0ttic Exp
+# $Configuration file for the FCGI-Part of /etc/init.d/lighttpd
+
+## Set this to &quot;yes&quot; to enable SPAWNFCGI
+ENABLE_SPAWNFCGI=&quot;yes&quot;
+
+## ABSOLUTE path to the spawn-fcgi binary
+SPAWNFCGI=&quot;/usr/bin/spawn-fcgi&quot;
+
+## ABSOLUTE path to the PHP binary
+FCGI_PROGRAM=&quot;/usr/bin/php-cgi&quot;
+
+## bind to tcp-port on localhost
+FCGI_PORT=&quot;65532&quot;
+
+## number of PHP childs to spawn
+PHP_FCGI_CHILDREN=5
+
+## number of request server by a single php-process until is will be restarted
+PHP_FCGI_MAX_REQUESTS=1000
+
+## IP adresses where PHP should access server connections from
+FCGI_WEB_SERVER_ADDRS=&quot;127.0.0.1&quot;
+
+# allowed environment variables sperated by spaces
+ALLOWED_ENV=&quot;PATH USER&quot;
+
+# do NOT change line below
+ALLOWED_ENV=&quot;$ALLOWED_ENV PHP_FCGI_MAX_REQUESTS FCGI_WEB_SERVER_ADDRS&quot;
+
+## if this script is run as root switch to the following user
+USERID=nginx
+GROUPID=nginx
+</code></pre>
+<p>通常要配置的选项是 FCGI_PROGRAM, FCGI_PORT, USERID and GROUPID。</p>
+<p>FCGI_PROGRAM : CGI程序的绝对路径。</p>
+<p>FCGI_PORT : Nginx监听的端口，可以随便定义，注意不要和其它服务有冲突。</p>
+<p>USERID 和 GROUPID ：以什么用户和用户组来运行。</p>
+<p>配置好后就可以启动这个服务和把它加入到开机自动运行。</p>
+<pre><code class="language-bash">/etc/init.d/spawn-fcgi.php start
+rc-update add spawn-fcgi default
+</code></pre>
+<p>在Nginx的配置文件加入fastcgi支持，加入以下内容：</p>
+<blockquote>
+<p>/etc/nginx/nginx.conf</p>
+</blockquote>
+<pre><code>index index.php index.html index.htm default.html default.htm
+location ~ .*.php$ {
+    include /etc/nginx/fastcgi.conf;
+    fastcgi_pass  127.0.0.1:65532;
+    fastcgi_index index.php;
+}
+</code></pre>
+<p>fastcgi_pass 是设置监听 spawn-fcgi 的地址和端口，注意这里的端口应该跟刚才在/etc/conf.d/spawn-fcgi.php里设置的一致。</p>
+<p>启动Nginx服务:</p>
+<pre><code class="language-bash">/etc/init.d/nginx start
+</code></pre>
+<p>或者把Nginx加入开机启动：</p>
+<pre><code class="language-bash">rc-update add nginx default
+</code></pre>
+<p>至此，Nginx的安装完成。</p>
+<p>参考：<br>
+<a href="http://en.gentoo-wiki.com/wiki/Nginx">Gentoo wiki</a></p>
+
+			
+		</div>
+		<footer class="clearfix">
+			
+
+			
+				<div class="tags">
+					<i class="fa fa-tags"></i>
+					
+						<a href="https://ohosanna.github.io/tag/AiI8RqKUuf/">#linux</a>
+					
+						<a href="https://ohosanna.github.io/tag/rl_12cyHPB/">#nginx</a>
+					
+				</div>
+			
+
+			
+
+		</footer>
+	</div>
+</article>
+          
+
+          <nav id="pagination">
+  
+    <a href="https://ohosanna.github.io/tag/AiI8RqKUuf" class="prev"><i class="fa fa-chevron-left"></i> 上一页</a>
+  
+  
+  </nav>
+
+        </div>
+      </div>
+    </div>
+
+    <script>
+  (function() {
+    var $app = document.getElementById('app');
+    var $titles = document.querySelectorAll('.post-content .title[data-role=articleTitle]');
+    var $fixTitle = document.getElementById('fixTitle');
+    window.onscroll = function() {
+      if (document.documentElement.clientWidth > 500) {
+        var $header = document.getElementById('header');
+        var y = window.scrollY || window.pageYOffset;
+        if (y > 40) {
+          $header.classList.add('small');
+        } else {
+          $header.classList.remove('small');
+        }
+      }
+
+      for (var i = $titles.length - 1; i >= 0; i--) {
+        var titleEl = $titles[i];
+        var rect = titleEl.getBoundingClientRect();
+        if (rect.top < 100) {
+          var text = titleEl.textContent;
+          $app.classList.add('show-fixtitle');
+          $fixTitle.querySelector('.title').textContent = text;
+          break;
+        } else if (i === 0) {
+          $app.classList.remove('show-fixtitle');
+        }
+      }
+
+    }
+  }());
+</script>
+
+  <link rel="stylesheet" href="http://cdn.bootcss.com/highlight.js/8.0/styles/tomorrow.min.css" />
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>

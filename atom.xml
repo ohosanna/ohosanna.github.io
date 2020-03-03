@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://ohosanna.github.io</id>
+    <title>Ohosanna&apos;s Blog</title>
+    <updated>2020-03-03T15:52:12.333Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://ohosanna.github.io"/>
+    <link rel="self" href="https://ohosanna.github.io/atom.xml"/>
+    <subtitle>老农家的一亩三分地</subtitle>
+    <logo>https://ohosanna.github.io/images/avatar.png</logo>
+    <icon>https://ohosanna.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2020, Ohosanna&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Kaminari 的 AJAX 翻页实现]]></title>
+        <id>https://ohosanna.github.io/post/2015-01-21-ajax-pagination-with-kaminari/</id>
+        <link href="https://ohosanna.github.io/post/2015-01-21-ajax-pagination-with-kaminari/">
+        </link>
+        <updated>2015-01-21T08:15:46.000Z</updated>
+        <summary type="html"><![CDATA[<p><a href="https://github.com/amatsuda/kaminari">Kaminari</a> 是 rails 上一个很有名的分页管理扩展，使用极其简单。最近刚在项目中使用了它的 AJAX 分页的功能，记录一下实现的过程。</p>
+<p>基本的安装和配置就不啰嗦了，按照官方的教程来进行就是啦，具体记录一下 AJAX 翻页实现的部分，以一个订单列表的页面作例子。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p><a href="https://github.com/amatsuda/kaminari">Kaminari</a> 是 rails 上一个很有名的分页管理扩展，使用极其简单。最近刚在项目中使用了它的 AJAX 分页的功能，记录一下实现的过程。</p>
+<p>基本的安装和配置就不啰嗦了，按照官方的教程来进行就是啦，具体记录一下 AJAX 翻页实现的部分，以一个订单列表的页面作例子。</p>
+<!--more-->
+<p>####View</p>
+<blockquote>
+<p>app/views/orders/index.html.haml</p>
+</blockquote>
+<pre><code class="language-haml">.table-resonsive
+  - if @orders.nil?
+    暂时还没有订单记录
+  - else
+    %table#list-orders.table.table-vcenter
+      %thead
+        %tr
+          %th.order-id 订单号
+          %th.order-track 订单状态
+          %th.order-actions 操作
+      %tbody
+        = render partial: 'list_order', collection: @orders, as: :order
+#paginator
+  = paginate @orders, remote: true
+</code></pre>
+<blockquote>
+<p>app/views/orders/_list_order.html.haml</p>
+</blockquote>
+<pre><code class="language-haml">%tr{ :id =&gt; &quot;order-#{order.id}&quot; }
+  %td= order.id
+  %td
+    .status
+  %td
+    =link_to &quot;更新状态&quot;, edit_cpanel_order_path(order), :remote =&gt; true
+</code></pre>
+<blockquote>
+<p>app/views/orders/index.js.erb</p>
+</blockquote>
+<pre><code class="language-javascript">$(&quot;#list-orders tbody&quot;).html(&quot;&lt;%= j( render partial: 'list_order', collection: @orders, as: :order ) %&gt;&quot;)
+$(&quot;#paginator&quot;).html(&quot;&lt;%= j( paginate(@orders, :remote =&gt; true).to_s ) %&gt;&quot;)
+</code></pre>
+<p>####Controller</p>
+<blockquote>
+<p>app/controller/orders_controller.rb</p>
+</blockquote>
+<pre><code class="language-ruby">def index
+  @orders = Order.all.order_by(:_id =&gt; :desc ).page params[:page]
+  @status = OrderStatus.enabled
+end
+</code></pre>
+<p>这样很简单就可以实现了AJAX的翻页效果</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[修复因ImageMagick版本升级后导致的RMagick错误]]></title>
+        <id>https://ohosanna.github.io/post/2012-08-25-imagemagickrmagick/</id>
+        <link href="https://ohosanna.github.io/post/2012-08-25-imagemagickrmagick/">
+        </link>
+        <updated>2012-08-24T17:33:14.000Z</updated>
+        <summary type="html"><![CDATA[<p>前段时间升级了系统的各个软件包，今天发现运行一个 Rails 项目的时候报如下错误:</p>
+<pre><code class="language-bash">This installation of RMagick was configured with ImageMagick 6.7.5 but ImageMagick 6.7.6-4 is in use
+</code></pre>
+]]></summary>
+        <content type="html"><![CDATA[<p>前段时间升级了系统的各个软件包，今天发现运行一个 Rails 项目的时候报如下错误:</p>
+<pre><code class="language-bash">This installation of RMagick was configured with ImageMagick 6.7.5 but ImageMagick 6.7.6-4 is in use
+</code></pre>
+<!--more-->
+<p>造成这个问题是因为 ImageMagick 是通过系统本身的包管理器来安装的（如 Gentoo 的 Portage ），而 RMagick 则是通过 Gem 来安装。当我通过系统的包管理器升级了 ImageMagick，Gem管理的RMagick却没有自动更新，于是导致了两者相依赖的库的版本不一致就产生了以上的错误。</p>
+<p>有两个办法可以解决这个问题：</p>
+<ol>
+<li>将 ImageMagick 降级到与 RMagick对应的版本。</li>
+<li>重新安装/升级 RMagick。</li>
+</ol>
+<p>由于 ImageMagick 的块头不小，编译起来比较花时间（当然如果用的是二进制包的发行版，就可以不用考虑这个问题，对Gentoo党的我来说，这是个问题。），所以重新安装/升级体积更小的 RMagick 当然是首选啦。简单的执行以下命令即可：</p>
+<pre><code class="language-bash">gem install rmagick -v 2.13.1
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[监控磁盘读写状况]]></title>
+        <id>https://ohosanna.github.io/post/2012-03-16-iotop/</id>
+        <link href="https://ohosanna.github.io/post/2012-03-16-iotop/">
+        </link>
+        <updated>2012-03-15T14:13:46.000Z</updated>
+        <summary type="html"><![CDATA[<p>有时候，我们经常会碰到这样的情形：没有运行任何程序，磁盘却不断执行读写动作，硬盘指示灯常亮，各种操作迟缓甚至鼠标都不能动了。碰到这种状况往往会感到束手无策，并且就纳闷了：<strong>究竟是什么程序在读写我的磁盘呢？</strong></p>
+<p>这个时候，就到<strong>iotop</strong>登场的时候了！</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>有时候，我们经常会碰到这样的情形：没有运行任何程序，磁盘却不断执行读写动作，硬盘指示灯常亮，各种操作迟缓甚至鼠标都不能动了。碰到这种状况往往会感到束手无策，并且就纳闷了：<strong>究竟是什么程序在读写我的磁盘呢？</strong></p>
+<p>这个时候，就到<strong>iotop</strong>登场的时候了！</p>
+<!-- more -->
+<pre><code class="language-bash">##如果没有安装就要先安装
+sudo emerge -av iotop
+sudo iotop
+</code></pre>
+<p>通过输出的信息，可以清楚的知道是什么程序在读/写磁盘，速度如何，程序的Pid等……<br>
+<img src="http://pic.yupoo.com/ohosanna_v/BOKAi0HK/1r9cb.png" alt="iotop 截图" loading="lazy"></p>
+<p>等等…… <strong>我怎么知道某一个程序读取了哪些文件呢？</strong></p>
+<p>这个时候，就要求助于&quot;lsof&quot;了！</p>
+<pre><code class="language-bash">sudo emerge -av lsof
+lsof -c 软件名
+##也可以根据被频繁读取的文件来反查程序
+lsof 文件名
+##还可以根据目录进行查询
+lsof | grep 目录路径
+</code></pre>
+<p>如果您想知道是系统中哪个用户正在读写的哪个文件，结合 iotop 和 lsof：</p>
+<pre><code class="language-bash">sudo iotop
+##查看用户的进程
+
+lsof -p PID    ##按该用户进程 pid 查看所打开的文件
+lsof -u USERNAME    ##按用户名查看打开的文件
+
+##列出某用户的某进程打开的文件
+lsof -u USERNAME -c APPNAME
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[计算一个数组里各元素出现的次数（ruby）]]></title>
+        <id>https://ohosanna.github.io/post/2012-02-16-ruby-count-item-in-array/</id>
+        <link href="https://ohosanna.github.io/post/2012-02-16-ruby-count-item-in-array/">
+        </link>
+        <updated>2012-02-15T14:44:33.000Z</updated>
+        <summary type="html"><![CDATA[<p>一个包含了多个元素的数组，如何计算出这个数组里各个元素出现的次数呢？比如说：<br>
+给出： <code>a = ['cat','dog','fish','fish']</code><br>
+得到的最终结果： <code>a2 = {'cat' =&gt; 1, 'dog' =&gt; 1, 'fish' =&gt; 2}</code></p>
+]]></summary>
+        <content type="html"><![CDATA[<p>一个包含了多个元素的数组，如何计算出这个数组里各个元素出现的次数呢？比如说：<br>
+给出： <code>a = ['cat','dog','fish','fish']</code><br>
+得到的最终结果： <code>a2 = {'cat' =&gt; 1, 'dog' =&gt; 1, 'fish' =&gt; 2}</code></p>
+<!-- more -->
+<p>解决这个问题的方法有很多种，以下是用Ruby语言来实现的几个方法：</p>
+<p>方法一：</p>
+<pre><code class="language-ruby">a = ['cat','dog','fish','fish']
+a2=Hash[a.group_by {|x| x}.map {|k,v| [k,v.count]}]
+</code></pre>
+<p>方法二：</p>
+<pre><code class="language-ruby">a = ['cat','dog','fish','fish']
+a2 = a.reduce(Hash.new(0)) { |a, b| a[b] += 1; a }
+</code></pre>
+<p>方法三：</p>
+<pre><code class="language-ruby">#适合Ruby 1.9.2以上版本
+a = ['cat','dog','fish','fish']
+a2 = a.each_with_object(Hash.new(0)) { |animal, hash| hash[animal] += 1 } 
+</code></pre>
+<p>方法四：</p>
+<pre><code class="language-ruby">a = ['cat','dog','fish','fish']
+a2 = a.uniq.inject({}){|h, e| h[e] = a.count(e); h }
+</code></pre>
+<p>方法五：</p>
+<pre><code class="language-ruby">a = ['cat','dog','fish','fish']
+a2 = Hash[a.uniq.map {|i| [i, a.count(i)]}]
+</code></pre>
+<p>方法六：</p>
+<pre><code class="language-ruby">a = ['cat','dog','fish','fish']
+a2 = {}
+a.uniq.each{|e| a2[e]= a.count(e)}
+</code></pre>
+<p>就我个人而言，第五种方法是我能想到的也是比较可以理解的，其它的方法有些还是未能完全理解，果然还是很多东西都不懂啊！</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[通过ActiveRecord访问数据表的列信息]]></title>
+        <id>https://ohosanna.github.io/post/2011-12-23-activerecord/</id>
+        <link href="https://ohosanna.github.io/post/2011-12-23-activerecord/">
+        </link>
+        <updated>2011-12-22T15:01:47.000Z</updated>
+        <summary type="html"><![CDATA[<p>ActiveRecord提供了很多方法来访问某个模型数据表的列信息</p>
+<p><strong>columns</strong><br>
+返回一个列对象的数组</p>
+<p><strong>columns_hash</strong><br>
+类似columns方法，不过返回一个以列名为key，列对象为value的hash数组</p>
+<p><strong>column_names</strong><br>
+返回模型数据表列名的数组</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>ActiveRecord提供了很多方法来访问某个模型数据表的列信息</p>
+<p><strong>columns</strong><br>
+返回一个列对象的数组</p>
+<p><strong>columns_hash</strong><br>
+类似columns方法，不过返回一个以列名为key，列对象为value的hash数组</p>
+<p><strong>column_names</strong><br>
+返回模型数据表列名的数组</p>
+<!-- more -->
+<p>可以通过以上方法来取得如列类型、默认值等信息：</p>
+<pre><code class="language-ruby">User.columns_hash['email'].type
+=&gt; :string
+User.columns_hash['email'].default
+=&gt; nil
+User.columns_hash['email'].sql_type
+=&gt; &quot;varchar(255)&quot;
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Gentoo下用Nginx+thin构建rails环境]]></title>
+        <id>https://ohosanna.github.io/post/2011-12-20-gentoonginxthinrails/</id>
+        <link href="https://ohosanna.github.io/post/2011-12-20-gentoonginxthinrails/">
+        </link>
+        <updated>2011-12-20T00:45:20.000Z</updated>
+        <summary type="html"><![CDATA[<p>Thin是一个ruby的轻量级的web server，根据它官网的提供的对比可以看到它在100个并发连接的情况下性能还是不错的。<br>
+<img src="http://chart.apis.google.com/chart?cht=bvg&amp;chd=t:14.98,54.8723076923077,48.9184615384615,79.9276923076923%7C14.8692307692308,65.0615384615385,70.4446153846154,89.5553846153846%7C14.9476923076923,35.1123076923077,70.18,88.6769230769231&amp;chbh=16&amp;chs=350x150&amp;chl=WEBrick%7CMongrel%7CEvented%20M.%7CThin&amp;chco=000000,666666,cccccc&amp;chdl=1%20c%20req.%7C10%20c%20req.%7C100%20c%20req." alt="Benchmarks" loading="lazy"></p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Thin是一个ruby的轻量级的web server，根据它官网的提供的对比可以看到它在100个并发连接的情况下性能还是不错的。<br>
+<img src="http://chart.apis.google.com/chart?cht=bvg&amp;chd=t:14.98,54.8723076923077,48.9184615384615,79.9276923076923%7C14.8692307692308,65.0615384615385,70.4446153846154,89.5553846153846%7C14.9476923076923,35.1123076923077,70.18,88.6769230769231&amp;chbh=16&amp;chs=350x150&amp;chl=WEBrick%7CMongrel%7CEvented%20M.%7CThin&amp;chco=000000,666666,cccccc&amp;chdl=1%20c%20req.%7C10%20c%20req.%7C100%20c%20req." alt="Benchmarks" loading="lazy"></p>
+<!-- more -->
+<p>要使用Thin作为你的Rails项目的服务器的话，只需在项目Gemfile里加入</p>
+<pre><code>gem 'thin'
+</code></pre>
+<p>然后转到项目目录下运行:</p>
+<pre><code>bundle install
+</code></pre>
+<p>Thin安装完之后，可以通过在项目目录下的lib/tasks下建立一个任务脚本来控制Thin集群。比如添加一个lib/tasks/thin.rake文件，内容如下:</p>
+<pre><code class="language-ruby">namespace :thin do
+  namespace :cluster do
+  desc 'Start thin cluster'
+    task :start =&gt; :environment do
+      Dir.chdir(Rails.root)
+      port_range = Rails.env == 'development' ? 3 : 8
+      (ENV['SIZE'] ? ENV['SIZE'].to_i : 4).times do |i|
+        Thread.new do
+          `sleep 1`
+          port = ENV['PORT'] ? ENV['PORT'].to_i + i : (&quot;#{port_range}%03d&quot; % i)
+          str  = &quot;thin start -d -p#{port} -Ptmp/pids/thin-#{port}.pid&quot;
+          str += &quot; -e#{Rails.env}&quot;
+          #puts &quot;Running #{str} \n&quot;
+          puts &quot;Starting server on port #{port}... \n&quot;
+          `#{str}`
+        end
+      end
+    end
+desc 'Stop all thin clusters'
+    task :stop =&gt; :environment do
+      Dir.chdir(Rails.root)
+      Dir.new(&quot;#{Rails.root}/tmp/pids&quot;).each do |file|
+        Thread.new do
+          `sleep 1`
+          if file.starts_with?(&quot;thin-&quot;)
+            str  = &quot;thin stop -Ptmp/pids/#{file}&quot;
+            #puts &quot;Running #{str} \n&quot;
+            puts &quot;Stopping server on port #{file[/\d+/]}... \n&quot;
+            `#{str}`
+          end
+        end
+      end
+    end
+  end
+end
+</code></pre>
+<p>之后就可以用:</p>
+<pre><code class="language-bash">$ rake thin:cluster:start RAILS_ENV=production SIZE=3 PORT=3100
+$ rake thin:cluster:stop
+</code></pre>
+<p>来启动|停止Thin集群了。</p>
+<p>接下来就是配置Nginx了。在Nginx的配置文件里添加一个虚拟主机：</p>
+<pre><code>upstream thin {
+  server 127.0.0.1:3100;
+  server 127.0.0.1:3101;
+  server 127.0.0.1:3102;
+}
+
+server {
+  listen 80;
+  server_name blog.keep-coding.com;
+  access_log  /home/nofool/project/myblog/log/blog.keep-coding.log;
+  root /home/nofool/project/myblog/public/;
+  
+  location / {
+    proxy_set_header  X-Real-IP  $remote_addr;
+    proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header Host $http_host;
+    proxy_set_header   X-Sendfile-Type  X-Accel-Redirect;
+    proxy_redirect off;
+
+    if (-f $request_filename/index.html) {
+      rewrite (.*) $1/index.html break;
+    }
+
+    if (-f $request_filename.html) {
+      rewrite (.*) $1.html break;
+    }
+
+    if (!-f $request_filename) {
+      proxy_pass http://thin;
+      break;
+    }
+  }
+}
+</code></pre>
+<p>如果你的Rails是3.1+版本，需要把项目config/environments/production.rb文件里的:</p>
+<pre><code>config.action_dispatch.x_sendfile_header = &quot;X-Sendfile&quot;
+</code></pre>
+<p>改为：</p>
+<pre><code>config.action_dispatch.x_sendfile_header = &quot;X-Accel-Redirect&quot;
+</code></pre>
+<p>否则会出现访问图片提示‘The image “...” cannot be displayed because it contains errors’而无法显示的问题。如果修改之后还出现同样的问题，那就要检查一下Nginx是否添加了“nginx_modules_http_headers_more”这个Use的支持。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[屏蔽SSH的暴力穷举破解]]></title>
+        <id>https://ohosanna.github.io/post/2011-12-09-ssh/</id>
+        <link href="https://ohosanna.github.io/post/2011-12-09-ssh/">
+        </link>
+        <updated>2011-12-08T20:06:03.000Z</updated>
+        <content type="html"><![CDATA[<p>最近经常碰到服务器被那些蛋疼得没治的人进行SSH暴力穷举破解，实在是让人讨厌。只好想办法来阻止了。主要有两种方法：</p>
+<p>1、 使用SSH本身的配置文件来阻止，在/etc/ssh/sshd_conf文件里加入：</p>
+<pre><code class="language-bash">LoginGraceTime 2m
+MaxAuthTries 6
+</code></pre>
+<p>这个意思大概就是在2分钟内只可以进行6次登录的尝试。</p>
+<p>2、 还有就是使用denyhosts这个软件。它可以分析SSH的日志文件，如果登录认证连续错了指定的次数，就把该IP列入到deny hosts里面。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Drupal字符截取函数views_trim_text]]></title>
+        <id>https://ohosanna.github.io/post/2011-11-30-drupalviews_trim_text/</id>
+        <link href="https://ohosanna.github.io/post/2011-11-30-drupalviews_trim_text/">
+        </link>
+        <updated>2011-11-29T09:15:22.000Z</updated>
+        <summary type="html"><![CDATA[<p>Drupal的Views模块有一个很好用的字符截取函数views_trim_text，它的用法如下：</p>
+<pre><code class="language-php">views_trim_text($alter, $value)
+</code></pre>
+<p><strong>参数：</strong><br>
+$alter</p>
+<ul>
+<li>max_length: 字符串最大长度，超出部分将被截取</li>
+<li>word_boundary: 以单词（Word）为边界来截取</li>
+<li>ellipsis: 以单词（Word）为边界来截取，结尾以‘...’结束</li>
+<li>html: 确保html标签的完整性</li>
+</ul>
+]]></summary>
+        <content type="html"><![CDATA[<p>Drupal的Views模块有一个很好用的字符截取函数views_trim_text，它的用法如下：</p>
+<pre><code class="language-php">views_trim_text($alter, $value)
+</code></pre>
+<p><strong>参数：</strong><br>
+$alter</p>
+<ul>
+<li>max_length: 字符串最大长度，超出部分将被截取</li>
+<li>word_boundary: 以单词（Word）为边界来截取</li>
+<li>ellipsis: 以单词（Word）为边界来截取，结尾以‘...’结束</li>
+<li>html: 确保html标签的完整性</li>
+</ul>
+<!-- more -->
+<p>源代码：</p>
+<pre><code class="language-php">&lt;?php
+function views_trim_text($alter, $value) {
+  if (drupal_strlen($value) &gt; $alter['max_length']) {
+    $value = drupal_substr($value, 0, $alter['max_length']);
+    // TODO: replace this with cleanstring of ctools
+    if (!empty($alter['word_boundary'])) {
+      $regex = &quot;(.*)\b.+&quot;;
+      if (function_exists('mb_ereg')) {
+        mb_regex_encoding('UTF-8');
+        $found = mb_ereg($regex, $value, $matches);
+      }
+      else {
+        $found = preg_match(&quot;/$regex/us&quot;, $value, $matches);
+      }
+      if ($found) {
+        $value = $matches[1];
+      }
+    }
+    // Remove scraps of HTML entities from the end of a strings
+    $value = rtrim(preg_replace('/(?:&lt;(?!.+&gt;)|&amp;(?!.+;)).*$/us', '', $value));
+
+    if (!empty($alter['ellipsis'])) {
+      $value .= '...';
+    }
+  }
+  if (!empty($alter['html'])) {
+    $value = _filter_htmlcorrector($value);
+  }
+
+  return $value;
+}
+?&gt;
+</code></pre>
+<p>使用实例：</p>
+<pre><code class="language-php">$alter['max_length']=15;
+$alter['ellipsis']=true;
+$trim_title= views_trim_text($alter,$links-&gt;title); 
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[mysql log-bin 日志文件]]></title>
+        <id>https://ohosanna.github.io/post/2011-11-26-mysql-log-bin/</id>
+        <link href="https://ohosanna.github.io/post/2011-11-26-mysql-log-bin/">
+        </link>
+        <updated>2011-11-25T10:04:53.000Z</updated>
+        <summary type="html"><![CDATA[<p>前段时间有人向我反映说我的VPS无法上传文件了，我登录上去一查，原来是VPS的磁盘空间已经差不多满了，FTP在可用空间少于10%的时候就拒绝上传文件了。当时因为工作忙，没有时间细查，只是把一些临时文件清理了让他不要再往网站上添加资料就放到一边了。今天记起这件事，怎么也想不明白平时的网页文件，应该占用不了这么多的空间的啊，到底是谁把我的空间吃掉了呢？</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>前段时间有人向我反映说我的VPS无法上传文件了，我登录上去一查，原来是VPS的磁盘空间已经差不多满了，FTP在可用空间少于10%的时候就拒绝上传文件了。当时因为工作忙，没有时间细查，只是把一些临时文件清理了让他不要再往网站上添加资料就放到一边了。今天记起这件事，怎么也想不明白平时的网页文件，应该占用不了这么多的空间的啊，到底是谁把我的空间吃掉了呢？</p>
+<!-- more -->
+<p>于是就开始一个个目录的排查，整个存放网页文件的目录占用的空间只是差不多2G而已，就算系统文件占了3G，那剩下的空间用在了哪里呢？最值得怀疑的就是/var下面的日志文件了，du一查看，果然是一个/var文件夹就占用了差不多5G空间！再继续深入，发现是/var/lib/mysql这个目录就占了差不多4G。再看这个目录下面，有三四十个这样的文件:</p>
+<pre><code>mysql-bin.000001
+mysql-bin.000002
+mysql-bin.000003
+mysql-bin.000004
+mysql-bin.000005
+……
+</code></pre>
+<p>有不少文件个头还不小，几百M的都有，难怪会没有空间了。上网一查，原来这些都是mysql的日志文件，记录着每一次的数据库操作记录，想想服务器上差不多两年的数据库操作记录，没有这么大才怪呢！</p>
+<p>下面是一些对此类日志处理的mysql命令：<br>
+查找当前有哪些二进制日志文件</p>
+<pre><code class="language-mysql">mysql&gt; show binary logs;
++------------------+-----------+
+| Log_name         | File_size |
++------------------+-----------+
+| mysql-bin.000001 |   1357315 |
+| mysql-bin.000002 |       117 |
+| mysql-bin.000003 |    404002 |
+| mysql-bin.000004 |   2050722 |
+| mysql-bin.000005 |    139103 |
+| mysql-bin.000006 |     46702 |
+| mysql-bin.000007 |       117 |
+…………
+</code></pre>
+<p>删除bin-log(删除mysql-bin.000018之前的所有二进制日志文件)</p>
+<pre><code class="language-mysql">mysql&gt; purge binary logs to 'mysql-bin.000018';
+Query OK, 0 rows affected (0.08 sec)
+</code></pre>
+<p>其实，bin-log文件主要用于几台服务器之间的数据库同步，如果只有一台服务器并且不考虑同步的话，可以把这个功能禁用掉。但是，很多时候这一类的日志文件还是很有用的，比如说你不记得做了什么把数据弄丢了，这时这些操作日志就可以帮到你了，所以保留一段时间的日志是很有必要的。可以在/etc/mysql/my.cnf文件里这样设置：</p>
+<pre><code>log-bin
+expire_logs_days = 30
+</code></pre>
+<p>这里的数字“30”就是要保留日志的天数，30天前的日志就会自动删除，这样一来就解决掉问题了。修改后重启mysql服务，我的服务器的可用空间一下子增加到了40%以上了，又可以撑很长一段时间的了。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Linux下Mp3乱码问题的处理]]></title>
+        <id>https://ohosanna.github.io/post/2011-11-04-linuxmp3/</id>
+        <link href="https://ohosanna.github.io/post/2011-11-04-linuxmp3/">
+        </link>
+        <updated>2011-11-03T14:18:48.000Z</updated>
+        <content type="html"><![CDATA[<p>在Linux下播放mp3的时候，经常碰到mp3的信息显示为乱码的问题。这是因为我们能找到的mp3文件标签大部分都是以GBK/GB18030编码的，而绝大多数的Linux(包括Linux系的手机系统)默认的编码是utf8，两者编码不同就会导致乱码问题的出现。</p>
+<p>一个很好的解决方法就是安装Mutagen这个软件，用它来把mp3标签的编码统一转换为utf8。在Gentoo下可以通过以下命令安装：</p>
+<pre><code>emerge -av mutagen
+</code></pre>
+<p>装完后就可以通过以下命令来把目录下的所有mp3文件批量转换了：</p>
+<pre><code class="language-bash">cd /mnt/sda5/music   #转到音乐文件目录
+find . -iname &quot;*.mp3&quot; -execdir mid3iconv -e gbk --remove-v1 {} \;
+</code></pre>
+<ul>
+<li>-e gbk 参数是代表把 GBK 编码的标签转换为 Unicode 编码，本身是 Unicode 编码的就不转换。如果需要转换其他编码的文件可以自行修改，如改为 Big5。</li>
+<li>不过它会同时用 Unicode 编码填满 D3v1, ID3v2, APEv2 标签，但是 ID3v1 又不支持中文的 Unicode 编码，所以转换后的 ID3v1 标签全是问号。所以最好加上 –remove-v1 参数，转换后删除 ID3v1 标签。</li>
+</ul>
+]]></content>
+    </entry>
+</feed>

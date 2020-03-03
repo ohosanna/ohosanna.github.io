@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>Ohosanna&#39;s Blog</title>
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="description" content="{{ themeConfig.description }}">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://ohosanna.github.io/favicon.ico?v=1583250719344">
+<link rel="stylesheet" href="https://ohosanna.github.io/styles/main.css">
+
+
+
+
+
+    <meta name="description" content="老农家的一亩三分地">
+    
+  </head>
+  <body>
+    <div id="app" class="main">
+      
+<header id="header">
+  <div id="fixTitle"><div class="center"><h1 class="title"></h1></div></div>
+	<div class="center">
+		<div class="wrap">
+			<div id="site">
+				<h1>
+          <a href="https://ohosanna.github.io">Ohosanna&#39;s Blog</a>
+          
+            <a class="github social-icon" href="https://github.com/">
+              <svg aria-hidden="true" class="octicon octicon-mark-github" height="28" role="img" version="1.1" viewBox="0 0 16 16" width="28"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59 0.4 0.07 0.55-0.17 0.55-0.38 0-0.19-0.01-0.82-0.01-1.49-2.01 0.37-2.53-0.49-2.69-0.94-0.09-0.23-0.48-0.94-0.82-1.13-0.28-0.15-0.68-0.52-0.01-0.53 0.63-0.01 1.08 0.58 1.23 0.82 0.72 1.21 1.87 0.87 2.33 0.66 0.07-0.52 0.28-0.87 0.51-1.07-1.78-0.2-3.64-0.89-3.64-3.95 0-0.87 0.31-1.59 0.82-2.15-0.08-0.2-0.36-1.02 0.08-2.12 0 0 0.67-0.21 2.2 0.82 0.64-0.18 1.32-0.27 2-0.27 0.68 0 1.36 0.09 2 0.27 1.53-1.04 2.2-0.82 2.2-0.82 0.44 1.1 0.16 1.92 0.08 2.12 0.51 0.56 0.82 1.27 0.82 2.15 0 3.07-1.87 3.75-3.65 3.95 0.29 0.25 0.54 0.73 0.54 1.48 0 1.07-0.01 1.93-0.01 2.2 0 0.21 0.15 0.46 0.55 0.38C13.71 14.53 16 11.53 16 8 16 3.58 12.42 0 8 0z"></path></svg>
+            </a>
+          
+				</h1>
+				
+					<h2>
+					  <a href="https://ohosanna.github.io">老农家的一亩三分地</a>
+          </h2>
+        
+			</div>
+			<nav id="menu">
+				<ul>
+          
+            
+              <li>
+                <a href="/" class="site-nav">
+                  首页
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/archives" class="site-nav">
+                  归档
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/tags" class="site-nav">
+                  标签
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/post/about" class="site-nav">
+                  关于
+                </a>
+              </li>
+            
+          
+				</ul>
+			</nav>
+		</div>
+	</div>
+</header>
+
+      <div id="content">
+        <div class="center">
+          <div class="main-col">
+            
+              <article class="">
+	<div class="post-content">
+		<header>
+			
+				<div class="meta">
+					<div class="icon">
+						<i class="fa fa-file"></i>
+					</div>
+					<time datetime="2015-01-21 16:15:46">2015-01-21 16:15:46</time>
+				</div>
+			
+
+			
+				<h1 class="title" data-role="articleTitle"><a href="https://ohosanna.github.io/post/2015-01-21-ajax-pagination-with-kaminari/">Kaminari 的 AJAX 翻页实现</a></h1>
+			
+		</header>
+		
+		<div class="entry">
+			
+				<p><a href="https://github.com/amatsuda/kaminari">Kaminari</a> 是 rails 上一个很有名的分页管理扩展，使用极其简单。最近刚在项目中使用了它的 AJAX 分页的功能，记录一下实现的过程。</p>
+<p>基本的安装和配置就不啰嗦了，按照官方的教程来进行就是啦，具体记录一下 AJAX 翻页实现的部分，以一个订单列表的页面作例子。</p>
+
+			
+		</div>
+		<footer class="clearfix">
+			
+				<div class="read-more">
+					<a href="https://ohosanna.github.io/post/2015-01-21-ajax-pagination-with-kaminari/#more" class="more-link"><i class="fa fa-ellipsis-h"></i></a>
+				</div>
+			
+
+			
+				<div class="tags">
+					<i class="fa fa-tags"></i>
+					
+						<a href="https://ohosanna.github.io/tag/KmAeozBYc/">#rails</a>
+					
+						<a href="https://ohosanna.github.io/tag/5WODUjd50/">#web</a>
+					
+				</div>
+			
+
+			
+
+		</footer>
+	</div>
+</article>
+            
+              <article class="">
+	<div class="post-content">
+		<header>
+			
+				<div class="meta">
+					<div class="icon">
+						<i class="fa fa-file"></i>
+					</div>
+					<time datetime="2012-08-25 01:33:14">2012-08-25 01:33:14</time>
+				</div>
+			
+
+			
+				<h1 class="title" data-role="articleTitle"><a href="https://ohosanna.github.io/post/2012-08-25-imagemagickrmagick/">修复因ImageMagick版本升级后导致的RMagick错误</a></h1>
+			
+		</header>
+		
+		<div class="entry">
+			
+				<p>前段时间升级了系统的各个软件包，今天发现运行一个 Rails 项目的时候报如下错误:</p>
+<pre><code class="language-bash">This installation of RMagick was configured with ImageMagick 6.7.5 but ImageMagick 6.7.6-4 is in use
+</code></pre>
+
+			
+		</div>
+		<footer class="clearfix">
+			
+				<div class="read-more">
+					<a href="https://ohosanna.github.io/post/2012-08-25-imagemagickrmagick/#more" class="more-link"><i class="fa fa-ellipsis-h"></i></a>
+				</div>
+			
+
+			
+				<div class="tags">
+					<i class="fa fa-tags"></i>
+					
+						<a href="https://ohosanna.github.io/tag/c_02H6ZdH/">#ruby</a>
+					
+				</div>
+			
+
+			
+
+		</footer>
+	</div>
+</article>
+            
+              <article class="">
+	<div class="post-content">
+		<header>
+			
+				<div class="meta">
+					<div class="icon">
+						<i class="fa fa-file"></i>
+					</div>
+					<time datetime="2012-03-15 22:13:46">2012-03-15 22:13:46</time>
+				</div>
+			
+
+			
+				<h1 class="title" data-role="articleTitle"><a href="https://ohosanna.github.io/post/2012-03-16-iotop/">监控磁盘读写状况</a></h1>
+			
+		</header>
+		
+		<div class="entry">
+			
+				<p>有时候，我们经常会碰到这样的情形：没有运行任何程序，磁盘却不断执行读写动作，硬盘指示灯常亮，各种操作迟缓甚至鼠标都不能动了。碰到这种状况往往会感到束手无策，并且就纳闷了：<strong>究竟是什么程序在读写我的磁盘呢？</strong></p>
+<p>这个时候，就到<strong>iotop</strong>登场的时候了！</p>
+
+			
+		</div>
+		<footer class="clearfix">
+			
+				<div class="read-more">
+					<a href="https://ohosanna.github.io/post/2012-03-16-iotop/#more" class="more-link"><i class="fa fa-ellipsis-h"></i></a>
+				</div>
+			
+
+			
+				<div class="tags">
+					<i class="fa fa-tags"></i>
+					
+						<a href="https://ohosanna.github.io/tag/OMv3BBGIqa/">#tools</a>
+					
+						<a href="https://ohosanna.github.io/tag/AiI8RqKUuf/">#linux</a>
+					
+				</div>
+			
+
+			
+
+		</footer>
+	</div>
+</article>
+            
+              <article class="">
+	<div class="post-content">
+		<header>
+			
+				<div class="meta">
+					<div class="icon">
+						<i class="fa fa-file"></i>
+					</div>
+					<time datetime="2012-02-15 22:44:33">2012-02-15 22:44:33</time>
+				</div>
+			
+
+			
+				<h1 class="title" data-role="articleTitle"><a href="https://ohosanna.github.io/post/2012-02-16-ruby-count-item-in-array/">计算一个数组里各元素出现的次数（ruby）</a></h1>
+			
+		</header>
+		
+		<div class="entry">
+			
+				<p>一个包含了多个元素的数组，如何计算出这个数组里各个元素出现的次数呢？比如说：<br>
+给出： <code>a = ['cat','dog','fish','fish']</code><br>
+得到的最终结果： <code>a2 = {'cat' =&gt; 1, 'dog' =&gt; 1, 'fish' =&gt; 2}</code></p>
+
+			
+		</div>
+		<footer class="clearfix">
+			
+				<div class="read-more">
+					<a href="https://ohosanna.github.io/post/2012-02-16-ruby-count-item-in-array/#more" class="more-link"><i class="fa fa-ellipsis-h"></i></a>
+				</div>
+			
+
+			
+				<div class="tags">
+					<i class="fa fa-tags"></i>
+					
+						<a href="https://ohosanna.github.io/tag/c_02H6ZdH/">#ruby</a>
+					
+				</div>
+			
+
+			
+
+		</footer>
+	</div>
+</article>
+            
+              <article class="">
+	<div class="post-content">
+		<header>
+			
+				<div class="meta">
+					<div class="icon">
+						<i class="fa fa-file"></i>
+					</div>
+					<time datetime="2011-12-22 23:01:47">2011-12-22 23:01:47</time>
+				</div>
+			
+
+			
+				<h1 class="title" data-role="articleTitle"><a href="https://ohosanna.github.io/post/2011-12-23-activerecord/">通过ActiveRecord访问数据表的列信息</a></h1>
+			
+		</header>
+		
+		<div class="entry">
+			
+				<p>ActiveRecord提供了很多方法来访问某个模型数据表的列信息</p>
+<p><strong>columns</strong><br>
+返回一个列对象的数组</p>
+<p><strong>columns_hash</strong><br>
+类似columns方法，不过返回一个以列名为key，列对象为value的hash数组</p>
+<p><strong>column_names</strong><br>
+返回模型数据表列名的数组</p>
+
+			
+		</div>
+		<footer class="clearfix">
+			
+				<div class="read-more">
+					<a href="https://ohosanna.github.io/post/2011-12-23-activerecord/#more" class="more-link"><i class="fa fa-ellipsis-h"></i></a>
+				</div>
+			
+
+			
+				<div class="tags">
+					<i class="fa fa-tags"></i>
+					
+						<a href="https://ohosanna.github.io/tag/KmAeozBYc/">#rails</a>
+					
+						<a href="https://ohosanna.github.io/tag/5WODUjd50/">#web</a>
+					
+				</div>
+			
+
+			
+
+		</footer>
+	</div>
+</article>
+            
+              <article class="">
+	<div class="post-content">
+		<header>
+			
+				<div class="meta">
+					<div class="icon">
+						<i class="fa fa-file"></i>
+					</div>
+					<time datetime="2011-12-20 08:45:20">2011-12-20 08:45:20</time>
+				</div>
+			
+
+			
+				<h1 class="title" data-role="articleTitle"><a href="https://ohosanna.github.io/post/2011-12-20-gentoonginxthinrails/">Gentoo下用Nginx+thin构建rails环境</a></h1>
+			
+		</header>
+		
+		<div class="entry">
+			
+				<p>Thin是一个ruby的轻量级的web server，根据它官网的提供的对比可以看到它在100个并发连接的情况下性能还是不错的。<br>
+<img src="http://chart.apis.google.com/chart?cht=bvg&amp;chd=t:14.98,54.8723076923077,48.9184615384615,79.9276923076923%7C14.8692307692308,65.0615384615385,70.4446153846154,89.5553846153846%7C14.9476923076923,35.1123076923077,70.18,88.6769230769231&amp;chbh=16&amp;chs=350x150&amp;chl=WEBrick%7CMongrel%7CEvented%20M.%7CThin&amp;chco=000000,666666,cccccc&amp;chdl=1%20c%20req.%7C10%20c%20req.%7C100%20c%20req." alt="Benchmarks" loading="lazy"></p>
+
+			
+		</div>
+		<footer class="clearfix">
+			
+				<div class="read-more">
+					<a href="https://ohosanna.github.io/post/2011-12-20-gentoonginxthinrails/#more" class="more-link"><i class="fa fa-ellipsis-h"></i></a>
+				</div>
+			
+
+			
+				<div class="tags">
+					<i class="fa fa-tags"></i>
+					
+						<a href="https://ohosanna.github.io/tag/KmAeozBYc/">#rails</a>
+					
+						<a href="https://ohosanna.github.io/tag/5WODUjd50/">#web</a>
+					
+						<a href="https://ohosanna.github.io/tag/AiI8RqKUuf/">#linux</a>
+					
+				</div>
+			
+
+			
+
+		</footer>
+	</div>
+</article>
+            
+              <article class="">
+	<div class="post-content">
+		<header>
+			
+				<div class="meta">
+					<div class="icon">
+						<i class="fa fa-file"></i>
+					</div>
+					<time datetime="2011-12-09 04:06:03">2011-12-09 04:06:03</time>
+				</div>
+			
+
+			
+				<h1 class="title" data-role="articleTitle"><a href="https://ohosanna.github.io/post/2011-12-09-ssh/">屏蔽SSH的暴力穷举破解</a></h1>
+			
+		</header>
+		
+		<div class="entry">
+			
+				<p>最近经常碰到服务器被那些蛋疼得没治的人进行SSH暴力穷举破解，实在是让人讨厌。只好想办法来阻止了。主要有两种方法：</p>
+<p>1、 使用SSH本身的配置文件来阻止，在/etc/ssh/sshd_conf文件里加入：</p>
+<pre><code class="language-bash">LoginGraceTime 2m
+MaxAuthTries 6
+</code></pre>
+<p>这个意思大概就是在2分钟内只可以进行6次登录的尝试。</p>
+<p>2、 还有就是使用denyhosts这个软件。它可以分析SSH的日志文件，如果登录认证连续错了指定的次数，就把该IP列入到deny hosts里面。</p>
+
+			
+		</div>
+		<footer class="clearfix">
+			
+
+			
+				<div class="tags">
+					<i class="fa fa-tags"></i>
+					
+						<a href="https://ohosanna.github.io/tag/AiI8RqKUuf/">#linux</a>
+					
+				</div>
+			
+
+			
+
+		</footer>
+	</div>
+</article>
+            
+              <article class="">
+	<div class="post-content">
+		<header>
+			
+				<div class="meta">
+					<div class="icon">
+						<i class="fa fa-file"></i>
+					</div>
+					<time datetime="2011-11-29 17:15:22">2011-11-29 17:15:22</time>
+				</div>
+			
+
+			
+				<h1 class="title" data-role="articleTitle"><a href="https://ohosanna.github.io/post/2011-11-30-drupalviews_trim_text/">Drupal字符截取函数views_trim_text</a></h1>
+			
+		</header>
+		
+		<div class="entry">
+			
+				<p>Drupal的Views模块有一个很好用的字符截取函数views_trim_text，它的用法如下：</p>
+<pre><code class="language-php">views_trim_text($alter, $value)
+</code></pre>
+<p><strong>参数：</strong><br>
+$alter</p>
+<ul>
+<li>max_length: 字符串最大长度，超出部分将被截取</li>
+<li>word_boundary: 以单词（Word）为边界来截取</li>
+<li>ellipsis: 以单词（Word）为边界来截取，结尾以‘...’结束</li>
+<li>html: 确保html标签的完整性</li>
+</ul>
+
+			
+		</div>
+		<footer class="clearfix">
+			
+				<div class="read-more">
+					<a href="https://ohosanna.github.io/post/2011-11-30-drupalviews_trim_text/#more" class="more-link"><i class="fa fa-ellipsis-h"></i></a>
+				</div>
+			
+
+			
+				<div class="tags">
+					<i class="fa fa-tags"></i>
+					
+						<a href="https://ohosanna.github.io/tag/PYXmbnVU-f/">#drupal</a>
+					
+						<a href="https://ohosanna.github.io/tag/NcZ28YSP6h/">#php</a>
+					
+						<a href="https://ohosanna.github.io/tag/5WODUjd50/">#web</a>
+					
+				</div>
+			
+
+			
+
+		</footer>
+	</div>
+</article>
+            
+              <article class="">
+	<div class="post-content">
+		<header>
+			
+				<div class="meta">
+					<div class="icon">
+						<i class="fa fa-file"></i>
+					</div>
+					<time datetime="2011-11-25 18:04:53">2011-11-25 18:04:53</time>
+				</div>
+			
+
+			
+				<h1 class="title" data-role="articleTitle"><a href="https://ohosanna.github.io/post/2011-11-26-mysql-log-bin/">mysql log-bin 日志文件</a></h1>
+			
+		</header>
+		
+		<div class="entry">
+			
+				<p>前段时间有人向我反映说我的VPS无法上传文件了，我登录上去一查，原来是VPS的磁盘空间已经差不多满了，FTP在可用空间少于10%的时候就拒绝上传文件了。当时因为工作忙，没有时间细查，只是把一些临时文件清理了让他不要再往网站上添加资料就放到一边了。今天记起这件事，怎么也想不明白平时的网页文件，应该占用不了这么多的空间的啊，到底是谁把我的空间吃掉了呢？</p>
+
+			
+		</div>
+		<footer class="clearfix">
+			
+				<div class="read-more">
+					<a href="https://ohosanna.github.io/post/2011-11-26-mysql-log-bin/#more" class="more-link"><i class="fa fa-ellipsis-h"></i></a>
+				</div>
+			
+
+			
+				<div class="tags">
+					<i class="fa fa-tags"></i>
+					
+						<a href="https://ohosanna.github.io/tag/gXz8RgPiX/">#mysql</a>
+					
+						<a href="https://ohosanna.github.io/tag/5WODUjd50/">#web</a>
+					
+				</div>
+			
+
+			
+
+		</footer>
+	</div>
+</article>
+            
+              <article class="">
+	<div class="post-content">
+		<header>
+			
+				<div class="meta">
+					<div class="icon">
+						<i class="fa fa-file"></i>
+					</div>
+					<time datetime="2011-11-03 22:18:48">2011-11-03 22:18:48</time>
+				</div>
+			
+
+			
+				<h1 class="title" data-role="articleTitle"><a href="https://ohosanna.github.io/post/2011-11-04-linuxmp3/">Linux下Mp3乱码问题的处理</a></h1>
+			
+		</header>
+		
+		<div class="entry">
+			
+				<p>在Linux下播放mp3的时候，经常碰到mp3的信息显示为乱码的问题。这是因为我们能找到的mp3文件标签大部分都是以GBK/GB18030编码的，而绝大多数的Linux(包括Linux系的手机系统)默认的编码是utf8，两者编码不同就会导致乱码问题的出现。</p>
+<p>一个很好的解决方法就是安装Mutagen这个软件，用它来把mp3标签的编码统一转换为utf8。在Gentoo下可以通过以下命令安装：</p>
+<pre><code>emerge -av mutagen
+</code></pre>
+<p>装完后就可以通过以下命令来把目录下的所有mp3文件批量转换了：</p>
+<pre><code class="language-bash">cd /mnt/sda5/music   #转到音乐文件目录
+find . -iname &quot;*.mp3&quot; -execdir mid3iconv -e gbk --remove-v1 {} \;
+</code></pre>
+<ul>
+<li>-e gbk 参数是代表把 GBK 编码的标签转换为 Unicode 编码，本身是 Unicode 编码的就不转换。如果需要转换其他编码的文件可以自行修改，如改为 Big5。</li>
+<li>不过它会同时用 Unicode 编码填满 D3v1, ID3v2, APEv2 标签，但是 ID3v1 又不支持中文的 Unicode 编码，所以转换后的 ID3v1 标签全是问号。所以最好加上 –remove-v1 参数，转换后删除 ID3v1 标签。</li>
+</ul>
+
+			
+		</div>
+		<footer class="clearfix">
+			
+
+			
+				<div class="tags">
+					<i class="fa fa-tags"></i>
+					
+						<a href="https://ohosanna.github.io/tag/OMv3BBGIqa/">#tools</a>
+					
+						<a href="https://ohosanna.github.io/tag/AiI8RqKUuf/">#linux</a>
+					
+				</div>
+			
+
+			
+
+		</footer>
+	</div>
+</article>
+            
+            <nav id="pagination">
+  
+  
+    <a href="https://ohosanna.github.io/page/2" class="next">下一页 <i class="fa fa-chevron-right"></i></a>
+  
+  </nav>
+
+          </div>
+        </div>
+      </div>
+      <nav id="pagination">
+  
+  
+    <a href="https://ohosanna.github.io/page/2" class="next">下一页 <i class="fa fa-chevron-right"></i></a>
+  
+  </nav>
+
+      <footer id="footer">
+	<div class="center">
+		&copy; 2020
+		
+			Ohosanna&#39;s Blog
+		.
+		&nbsp;&nbsp;
+		  
+		<a class="rss" href="https://ohosanna.github.io/atom.xml" target="_blank">
+		&nbsp;&nbsp;
+			<i class="fa fa-rss"></i> RSS
+		</a>
+		&nbsp;&nbsp;
+		Blog generated by <a href="https://gridea.dev" target="_blank">Gridea</a>
+	</div>
+</footer>
+    </div>
+
+    <script>
+  (function() {
+    var $app = document.getElementById('app');
+    var $titles = document.querySelectorAll('.post-content .title[data-role=articleTitle]');
+    var $fixTitle = document.getElementById('fixTitle');
+    window.onscroll = function() {
+      if (document.documentElement.clientWidth > 500) {
+        var $header = document.getElementById('header');
+        var y = window.scrollY || window.pageYOffset;
+        if (y > 40) {
+          $header.classList.add('small');
+        } else {
+          $header.classList.remove('small');
+        }
+      }
+
+      for (var i = $titles.length - 1; i >= 0; i--) {
+        var titleEl = $titles[i];
+        var rect = titleEl.getBoundingClientRect();
+        if (rect.top < 100) {
+          var text = titleEl.textContent;
+          $app.classList.add('show-fixtitle');
+          $fixTitle.querySelector('.title').textContent = text;
+          break;
+        } else if (i === 0) {
+          $app.classList.remove('show-fixtitle');
+        }
+      }
+
+    }
+  }());
+</script>
+
+  <link rel="stylesheet" href="http://cdn.bootcss.com/highlight.js/8.0/styles/tomorrow.min.css" />
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>
