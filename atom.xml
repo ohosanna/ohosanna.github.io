@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://ohosanna.com</id>
+    <id>http://localhost:4000</id>
     <title>Ohosanna&apos;s Blog</title>
-    <updated>2020-03-04T17:31:02.453Z</updated>
+    <updated>2020-03-04T17:31:09.630Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://ohosanna.com"/>
-    <link rel="self" href="https://ohosanna.com/atom.xml"/>
+    <link rel="alternate" href="http://localhost:4000"/>
+    <link rel="self" href="http://localhost:4000/atom.xml"/>
     <subtitle>老农家的一亩三分地</subtitle>
-    <logo>https://ohosanna.com/images/avatar.png</logo>
-    <icon>https://ohosanna.com/favicon.ico</icon>
+    <logo>http://localhost:4000/images/avatar.png</logo>
+    <icon>http://localhost:4000/favicon.ico</icon>
     <rights>All rights reserved 2020, Ohosanna&apos;s Blog</rights>
     <entry>
         <title type="html"><![CDATA[Gridea theme simplest]]></title>
-        <id>https://ohosanna.com/post/gridea-theme-simplest/</id>
-        <link href="https://ohosanna.com/post/gridea-theme-simplest/">
+        <id>http://localhost:4000/post/gridea-theme-simplest/</id>
+        <link href="http://localhost:4000/post/gridea-theme-simplest/">
         </link>
         <updated>2020-03-03T16:15:07.000Z</updated>
         <content type="html"><![CDATA[<p><a href="https://gridea.dev/">Gridea</a> 是一个静态博客写作客户端，帮助你更容易地构建并管理博客或任何静态站点。</p>
@@ -23,8 +23,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Kaminari 的 AJAX 翻页实现]]></title>
-        <id>https://ohosanna.com/post/2015-01-21-ajax-pagination-with-kaminari/</id>
-        <link href="https://ohosanna.com/post/2015-01-21-ajax-pagination-with-kaminari/">
+        <id>http://localhost:4000/post/2015-01-21-ajax-pagination-with-kaminari/</id>
+        <link href="http://localhost:4000/post/2015-01-21-ajax-pagination-with-kaminari/">
         </link>
         <updated>2015-01-21T08:15:46.000Z</updated>
         <summary type="html"><![CDATA[<p><a href="https://github.com/amatsuda/kaminari">Kaminari</a> 是 rails 上一个很有名的分页管理扩展，使用极其简单。最近刚在项目中使用了它的 AJAX 分页的功能，记录一下实现的过程。</p>
@@ -82,8 +82,8 @@ end
     </entry>
     <entry>
         <title type="html"><![CDATA[修复因ImageMagick版本升级后导致的RMagick错误]]></title>
-        <id>https://ohosanna.com/post/2012-08-25-imagemagickrmagick/</id>
-        <link href="https://ohosanna.com/post/2012-08-25-imagemagickrmagick/">
+        <id>http://localhost:4000/post/2012-08-25-imagemagickrmagick/</id>
+        <link href="http://localhost:4000/post/2012-08-25-imagemagickrmagick/">
         </link>
         <updated>2012-08-24T17:33:14.000Z</updated>
         <summary type="html"><![CDATA[<p>前段时间升级了系统的各个软件包，今天发现运行一个 Rails 项目的时候报如下错误:</p>
@@ -107,8 +107,8 @@ end
     </entry>
     <entry>
         <title type="html"><![CDATA[监控磁盘读写状况]]></title>
-        <id>https://ohosanna.com/post/2012-03-16-iotop/</id>
-        <link href="https://ohosanna.com/post/2012-03-16-iotop/">
+        <id>http://localhost:4000/post/2012-03-16-iotop/</id>
+        <link href="http://localhost:4000/post/2012-03-16-iotop/">
         </link>
         <updated>2012-03-15T14:13:46.000Z</updated>
         <summary type="html"><![CDATA[<p>有时候，我们经常会碰到这样的情形：没有运行任何程序，磁盘却不断执行读写动作，硬盘指示灯常亮，各种操作迟缓甚至鼠标都不能动了。碰到这种状况往往会感到束手无策，并且就纳闷了：<strong>究竟是什么程序在读写我的磁盘呢？</strong></p>
@@ -146,8 +146,8 @@ lsof -u USERNAME -c APPNAME
     </entry>
     <entry>
         <title type="html"><![CDATA[计算一个数组里各元素出现的次数（ruby）]]></title>
-        <id>https://ohosanna.com/post/2012-02-16-ruby-count-item-in-array/</id>
-        <link href="https://ohosanna.com/post/2012-02-16-ruby-count-item-in-array/">
+        <id>http://localhost:4000/post/2012-02-16-ruby-count-item-in-array/</id>
+        <link href="http://localhost:4000/post/2012-02-16-ruby-count-item-in-array/">
         </link>
         <updated>2012-02-15T14:44:33.000Z</updated>
         <summary type="html"><![CDATA[<p>一个包含了多个元素的数组，如何计算出这个数组里各个元素出现的次数呢？比如说：<br>
@@ -190,8 +190,8 @@ a.uniq.each{|e| a2[e]= a.count(e)}
     </entry>
     <entry>
         <title type="html"><![CDATA[通过ActiveRecord访问数据表的列信息]]></title>
-        <id>https://ohosanna.com/post/2011-12-23-activerecord/</id>
-        <link href="https://ohosanna.com/post/2011-12-23-activerecord/">
+        <id>http://localhost:4000/post/2011-12-23-activerecord/</id>
+        <link href="http://localhost:4000/post/2011-12-23-activerecord/">
         </link>
         <updated>2011-12-22T15:01:47.000Z</updated>
         <summary type="html"><![CDATA[<p>ActiveRecord提供了很多方法来访问某个模型数据表的列信息</p>
@@ -222,8 +222,8 @@ User.columns_hash['email'].sql_type
     </entry>
     <entry>
         <title type="html"><![CDATA[Gentoo下用Nginx+thin构建rails环境]]></title>
-        <id>https://ohosanna.com/post/2011-12-20-gentoonginxthinrails/</id>
-        <link href="https://ohosanna.com/post/2011-12-20-gentoonginxthinrails/">
+        <id>http://localhost:4000/post/2011-12-20-gentoonginxthinrails/</id>
+        <link href="http://localhost:4000/post/2011-12-20-gentoonginxthinrails/">
         </link>
         <updated>2011-12-20T00:45:20.000Z</updated>
         <summary type="html"><![CDATA[<p>Thin是一个ruby的轻量级的web server，根据它官网的提供的对比可以看到它在100个并发连接的情况下性能还是不错的。<br>
@@ -326,8 +326,8 @@ server {
     </entry>
     <entry>
         <title type="html"><![CDATA[屏蔽SSH的暴力穷举破解]]></title>
-        <id>https://ohosanna.com/post/2011-12-09-ssh/</id>
-        <link href="https://ohosanna.com/post/2011-12-09-ssh/">
+        <id>http://localhost:4000/post/2011-12-09-ssh/</id>
+        <link href="http://localhost:4000/post/2011-12-09-ssh/">
         </link>
         <updated>2011-12-08T20:06:03.000Z</updated>
         <content type="html"><![CDATA[<p>最近经常碰到服务器被那些蛋疼得没治的人进行SSH暴力穷举破解，实在是让人讨厌。只好想办法来阻止了。主要有两种方法：</p>
@@ -341,8 +341,8 @@ MaxAuthTries 6
     </entry>
     <entry>
         <title type="html"><![CDATA[Drupal字符截取函数views_trim_text]]></title>
-        <id>https://ohosanna.com/post/2011-11-30-drupalviews_trim_text/</id>
-        <link href="https://ohosanna.com/post/2011-11-30-drupalviews_trim_text/">
+        <id>http://localhost:4000/post/2011-11-30-drupalviews_trim_text/</id>
+        <link href="http://localhost:4000/post/2011-11-30-drupalviews_trim_text/">
         </link>
         <updated>2011-11-29T09:15:22.000Z</updated>
         <summary type="html"><![CDATA[<p>Drupal的Views模块有一个很好用的字符截取函数views_trim_text，它的用法如下：</p>
@@ -412,8 +412,8 @@ $trim_title= views_trim_text($alter,$links-&gt;title);
     </entry>
     <entry>
         <title type="html"><![CDATA[mysql log-bin 日志文件]]></title>
-        <id>https://ohosanna.com/post/2011-11-26-mysql-log-bin/</id>
-        <link href="https://ohosanna.com/post/2011-11-26-mysql-log-bin/">
+        <id>http://localhost:4000/post/2011-11-26-mysql-log-bin/</id>
+        <link href="http://localhost:4000/post/2011-11-26-mysql-log-bin/">
         </link>
         <updated>2011-11-25T10:04:53.000Z</updated>
         <summary type="html"><![CDATA[<p>前段时间有人向我反映说我的VPS无法上传文件了，我登录上去一查，原来是VPS的磁盘空间已经差不多满了，FTP在可用空间少于10%的时候就拒绝上传文件了。当时因为工作忙，没有时间细查，只是把一些临时文件清理了让他不要再往网站上添加资料就放到一边了。今天记起这件事，怎么也想不明白平时的网页文件，应该占用不了这么多的空间的啊，到底是谁把我的空间吃掉了呢？</p>
